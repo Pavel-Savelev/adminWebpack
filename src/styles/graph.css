@@ -1,0 +1,45 @@
+.xLineColor{
+    stroke: black;
+}
+
+.yLineColor{
+    stroke: black;
+}
+
+.recharts-tooltip-wrapper {
+    background-color: #ccc;
+    border-radius:50px ;
+    transition: none;
+}
+
+.recharts-tooltip-item-name {
+  color: #000000;
+}
+
+.recharts-tooltip-item-value {
+    color: #000000;
+}
+
+.recharts-tooltip-wrapper {
+    transition: transform 100ms ease-in-out !important; 
+}
+
+.recharts-tooltip-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  font-size: 12px;
+  pointer-events: auto; 
+  width: 100px;
+  height: 80px;
+  padding: 0 3px;
+  border-radius:5px !important;
+  border: 1px solid black !important;
+  background-color: #ebebeb !important;
+}
+
+
+.recharts-default-tooltip {
+  background-color: #ebebeb !important;}
