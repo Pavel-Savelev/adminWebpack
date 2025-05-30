@@ -44,26 +44,42 @@ const chargerStatsDataFail:IChargerStatType[] = [
         ];
 
     const dataTotalCharger:IChargerData[] = [
-        { date: new Date("2024-06-01"), value: 2000 },
-        { date: new Date("2024-06-02"), value: 1850 },
-        { date: new Date("2024-06-03"), value: 2200 },
-        { date: new Date("2024-06-04"), value: 1980 },
-        { date: new Date("2024-06-05"), value: 2100 },
-        { date: new Date("2024-06-06"), value: 1950 },
-        { date: new Date("2024-06-07"), value: 2250 },
-        { date: new Date("2024-06-08"), value: 2300 },
-        { date: new Date("2024-06-09"), value: 1900 },
-        { date: new Date("2024-06-10"), value: 2050 },
-        { date: new Date("2024-06-11"), value: 2150 },
-        { date: new Date("2024-06-12"), value: 2000 },
-        { date: new Date("2024-06-13"), value: 1950 },
-        { date: new Date("2024-06-14"), value: 2400 },
-        { date: new Date("2024-06-15"), value: 2250 },
-        { date: new Date("2024-06-16"), value: 2350 },
-        { date: new Date("2024-06-17"), value: 2100 },
-        { date: new Date("2024-06-18"), value: 2500 },
-        { date: new Date("2024-06-19"), value: 2050 },
-        { date: new Date("2024-06-20"), value: 2200 },
+        { date: new Date("2022-01-05T08:15:00"), value: 1800 },
+  { date: new Date("2022-01-05T18:45:00"), value: 1850 },
+  { date: new Date("2022-02-10T09:00:00"), value: 2100 },
+  { date: new Date("2022-02-10T20:30:00"), value: 2200 },
+  { date: new Date("2022-03-15T07:00:00"), value: 2300 },
+  { date: new Date("2022-03-15T22:15:00"), value: 2250 },
+
+  // 2023 год
+  { date: new Date("2023-04-01T10:00:00"), value: 1900 },
+  { date: new Date("2023-04-01T16:30:00"), value: 2000 },
+  { date: new Date("2023-05-20T12:00:00"), value: 2150 },
+  { date: new Date("2023-05-20T18:45:00"), value: 2250 },
+  { date: new Date("2023-06-10T09:15:00"), value: 2000 },
+  { date: new Date("2023-06-10T21:00:00"), value: 1950 },
+
+  // 2024 год
+  { date: new Date("2024-09-10T22:00:00"), value: 2050 },
+
+  { date: new Date("2025-05-25T08:00:00"), value: 2100 }, // Воскресенье
+  { date: new Date("2025-05-26T09:30:00"), value: 2150 }, // Понедельник
+  { date: new Date("2025-01-27T14:15:00"), value: 2200 }, // Вторник
+  { date: new Date("2025-02-28T16:45:00"), value: 2250 }, // Среда
+  { date: new Date("2025-03-29T11:30:00"), value: 2300 }, // Четверг
+  { date: new Date("2025-04-30T19:00:00"), value: 2350 }, // Пятница (сегодня)
+  { date: new Date("2025-05-30T21:15:00"), value: 2400 },
+  { date: new Date("2025-05-30T08:01:00"), value: 2100 },
+  { date: new Date("2025-05-30T08:02:00"), value: 2100 },
+  { date: new Date("2025-05-30T09:03:10"), value: 2100 }, // Воскресенье
+  { date: new Date("2025-05-30T10:03:00"), value: 2100 },
+  { date: new Date("2025-05-30T11:04:00"), value: 2100 },
+  { date: new Date("2025-05-30T12:30:00"), value: 2150 }, // Понедельник
+  { date: new Date("2025-08-27T14:15:00"), value: 2200 }, // Вторник
+  { date: new Date("2025-09-28T16:45:00"), value: 2250 }, // Среда
+  { date: new Date("2025-10-29T11:30:00"), value: 2300 }, // Четверг
+  { date: new Date("2025-11-30T19:00:00"), value: 2350 }, 
+  { date: new Date("2025-12-31T21:15:00"), value: 2400 }
     ]
 // думаю тоже будет вызываться апи в самом методе 
 const dataMonitoring: IDataCurrentStations = {
@@ -90,7 +106,6 @@ function Statisctics(){
     const handleSliderValueChange = (value: number) => {
         setSliderValue(value)
     }
-
     const handleDateChange = (start: string, end: string) => {
         const startDay = parseDDMMYYYY(start)
         const endDay = parseDDMMYYYY(end)

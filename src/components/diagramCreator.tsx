@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import LinePlot from "./graph"; // по умолчанию
+import LinePlot from "./graph";
 import { DiagramDataPoint } from "../types/diagram.jsx";
 
 interface DiagramCreatorProps {
@@ -49,50 +49,53 @@ const DiagramCreator: React.FC<DiagramCreatorProps> = ({
 
   const filterData = (period: Period) => {
     const now = new Date();
+
+    // Приводим даты к объектам Date (если еще не объекты Date)
+    const normalizedData = data.map((d) => ({
+      ...d,
+      date: d.date instanceof Date ? d.date : new Date(d.date),
+    }));
+
     let filtered: DiagramDataPoint[] = [];
 
     switch (period) {
       case "Day":
-        filtered = data.filter((d) => {
-          const date = new Date(d.date);
-          return date.toDateString() === now.toDateString();
-        });
+        filtered = normalizedData.filter(
+          (d) => d.date.toDateString() === now.toDateString()
+        );
         break;
 
       case "Week":
         const startOfWeek = new Date(now);
         startOfWeek.setDate(now.getDate() - now.getDay());
         startOfWeek.setHours(0, 0, 0, 0);
+
         const endOfWeek = new Date(startOfWeek);
         endOfWeek.setDate(startOfWeek.getDate() + 6);
         endOfWeek.setHours(23, 59, 59, 999);
-        filtered = data.filter((d) => {
-          const date = new Date(d.date);
-          return date >= startOfWeek && date <= endOfWeek;
-        });
+
+        filtered = normalizedData.filter(
+          (d) => d.date >= startOfWeek && d.date <= endOfWeek
+        );
         break;
 
       case "Month":
-        filtered = data.filter((d) => {
-          const date = new Date(d.date);
-          return (
-            date.getMonth() === now.getMonth() &&
-            date.getFullYear() === now.getFullYear()
-          );
-        });
+        filtered = normalizedData.filter(
+          (d) =>
+            d.date.getMonth() === now.getMonth() &&
+            d.date.getFullYear() === now.getFullYear()
+        );
         break;
 
       case "Year":
-        const yearData = data.filter((d) => {
-          const date = new Date(d.date);
-          return date.getFullYear() === now.getFullYear();
-        });
+        const yearData = normalizedData.filter(
+          (d) => d.date.getFullYear() === now.getFullYear()
+        );
 
         const grouped = new Map<string, number[]>();
         yearData.forEach((d) => {
-          const date = new Date(d.date);
-          const key = `${date.getFullYear()}-${String(
-            date.getMonth() + 1
+          const key = `${d.date.getFullYear()}-${String(
+            d.date.getMonth() + 1
           ).padStart(2, "0")}`;
           if (!grouped.has(key)) grouped.set(key, []);
           grouped.get(key)!.push(d.value);
@@ -100,22 +103,21 @@ const DiagramCreator: React.FC<DiagramCreatorProps> = ({
 
         filtered = Array.from(grouped.entries()).map(([month, values]) => ({
           date: new Date(`${month}-01T00:00:00`),
-          value: values.reduce((a, b) => a + b, 0) / values.length,
+          value: values.reduce((a, b) => a + b, 0),
         }));
         break;
 
-        default:
-          filtered = data;
-          break;
+      default:
+        filtered = normalizedData;
+        break;
     }
 
     setFilteredData(filtered);
   };
 
   useEffect(() => {
-  filterData(activeItem);
+    filterData(activeItem);
   }, [data, activeItem]);
-
 
   const Chart = ChartComponent ?? LinePlot;
 
@@ -130,7 +132,11 @@ const DiagramCreator: React.FC<DiagramCreatorProps> = ({
         />
       </div>
       <div className="diagram-placeholder">
-        <Chart data={filteredData} activeItem={activeItem} />
+        {filteredData.length === 0 ? (
+          <p>❌ Нет данных для отображения</p>
+        ) : (
+          <Chart data={filteredData} activeItem={activeItem} />
+        )}
       </div>
     </div>
   );

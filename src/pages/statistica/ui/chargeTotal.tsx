@@ -19,12 +19,24 @@ function getTotal(data: IChargerData[]): number {
   return data.reduce((sum, item) => sum + item.value, 0);
 }
 
-const WavyLineChart: React.FC<ChargerTotalProps> = ({ data }) => {
-  // Преобразуем дату в строку для оси X
-  const formattedData = data.map((item) => ({
-    ...item,
-    date: item.date.toLocaleDateString("ru-RU"),
-  }));
+const WavyLineChart: React.FC<{
+  data: IChargerData[];
+  activeItem?: string;
+}> = ({ data, activeItem }) => {
+  console.log("📈 WavyLineChart data:", data);
+
+  const formattedData = data.map((item) => {
+    const dateObj = new Date(item.date);
+    return {
+      ...item,
+      date: dateObj.toLocaleDateString("ru-RU"),
+      charged: item.value,
+      time: dateObj.toLocaleTimeString("ru-RU", {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    };
+  });
 
   return (
     <ResponsiveContainer width="100%" height={300}>
@@ -35,7 +47,21 @@ const WavyLineChart: React.FC<ChargerTotalProps> = ({ data }) => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />
         <YAxis />
-        <Tooltip />
+        <Tooltip 
+          contentStyle={{
+              width: '160px',
+              height: '80px',
+              fontSize: '14px',
+              padding:'16px 10px',
+              border:'3px solid #ccc',
+              borderRadius:'5px'
+            }}
+          formatter={(value: number, name: string, props: any) => [`${value} кВт*ч`, 'Зарядка']}
+          labelFormatter={(label: string, payload: any) => {
+            const time = payload?.[0]?.payload?.time;
+            return `${label} ${time ? `в ${time}` : ''}`;
+  }}
+/>
         <Line
           type="monotone"
           dataKey="charged"
@@ -50,6 +76,7 @@ const WavyLineChart: React.FC<ChargerTotalProps> = ({ data }) => {
 };
 
 export function ChargerTotal({ data }: ChargerTotalProps) {
+  console.log("🔌 ChargerTotal data:", data);
   const totalChargedParam = getTotal(data);
   return (
     <div className="charger__total-container">
@@ -67,5 +94,3 @@ export function ChargerTotal({ data }: ChargerTotalProps) {
     </div>
   );
 }
-
-

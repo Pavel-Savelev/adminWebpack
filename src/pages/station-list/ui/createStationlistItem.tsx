@@ -11,7 +11,6 @@ function CreateListItem({ station  }: Props) {
     
 
     const handleClick = () => {
-      console.log(station)
       navigate(`/station/${station.id}`, { 
           state: { 
               station
