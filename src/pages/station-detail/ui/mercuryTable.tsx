@@ -7,7 +7,7 @@ interface MercuryTableProps {
 export function MercuryTable({ station }: { station: IElectricalStation }) {
   const { total, phase_A, phase_B, phase_C } = station.stationChargerData;
   return (
-    <table>
+    <table >
       <tbody>
         <tr className="cell-block">
           <td> 

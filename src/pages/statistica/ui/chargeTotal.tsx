@@ -23,7 +23,6 @@ const WavyLineChart: React.FC<{
   data: IChargerData[];
   activeItem?: string;
 }> = ({ data, activeItem }) => {
-  console.log("📈 WavyLineChart data:", data);
 
   const formattedData = data.map((item) => {
     const dateObj = new Date(item.date);
@@ -76,7 +75,6 @@ const WavyLineChart: React.FC<{
 };
 
 export function ChargerTotal({ data }: ChargerTotalProps) {
-  console.log("🔌 ChargerTotal data:", data);
   const totalChargedParam = getTotal(data);
   return (
     <div className="charger__total-container">

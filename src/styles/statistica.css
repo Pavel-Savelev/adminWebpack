@@ -2,6 +2,8 @@
 .statistic__body{
     margin: 15px 10px;
     width: 100%;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
 }
 
 .statistics__header{
@@ -136,6 +138,9 @@
     height: 300px; /* Высота графика */
 }
 
+.charger__total-container{
+    margin-bottom: 25px;
+}
 
 /* diagrams - statistica__header */
 .statistics-total {

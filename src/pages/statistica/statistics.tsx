@@ -62,22 +62,22 @@ const chargerStatsDataFail:IChargerStatType[] = [
   // 2024 год
   { date: new Date("2024-09-10T22:00:00"), value: 2050 },
 
-  { date: new Date("2025-05-25T08:00:00"), value: 2100 }, // Воскресенье
-  { date: new Date("2025-05-26T09:30:00"), value: 2150 }, // Понедельник
-  { date: new Date("2025-01-27T14:15:00"), value: 2200 }, // Вторник
-  { date: new Date("2025-02-28T16:45:00"), value: 2250 }, // Среда
-  { date: new Date("2025-03-29T11:30:00"), value: 2300 }, // Четверг
-  { date: new Date("2025-04-30T19:00:00"), value: 2350 }, // Пятница (сегодня)
+  { date: new Date("2025-05-25T08:00:00"), value: 2100 }, 
+  { date: new Date("2025-05-26T09:30:00"), value: 2150 },
+  { date: new Date("2025-01-27T14:15:00"), value: 2200 },
+  { date: new Date("2025-02-28T16:45:00"), value: 2250 }, 
+  { date: new Date("2025-03-29T11:30:00"), value: 2300 },
+  { date: new Date("2025-04-30T19:00:00"), value: 2350 }, 
   { date: new Date("2025-05-30T21:15:00"), value: 2400 },
   { date: new Date("2025-05-30T08:01:00"), value: 2100 },
   { date: new Date("2025-05-30T08:02:00"), value: 2100 },
-  { date: new Date("2025-05-30T09:03:10"), value: 2100 }, // Воскресенье
+  { date: new Date("2025-05-30T09:03:10"), value: 2100 }, 
   { date: new Date("2025-05-30T10:03:00"), value: 2100 },
   { date: new Date("2025-05-30T11:04:00"), value: 2100 },
-  { date: new Date("2025-05-30T12:30:00"), value: 2150 }, // Понедельник
-  { date: new Date("2025-08-27T14:15:00"), value: 2200 }, // Вторник
-  { date: new Date("2025-09-28T16:45:00"), value: 2250 }, // Среда
-  { date: new Date("2025-10-29T11:30:00"), value: 2300 }, // Четверг
+  { date: new Date("2025-05-30T12:30:00"), value: 2150 },
+  { date: new Date("2025-08-27T14:15:00"), value: 2200 },
+  { date: new Date("2025-09-28T16:45:00"), value: 2250 }, 
+  { date: new Date("2025-10-29T11:30:00"), value: 2300 },
   { date: new Date("2025-11-30T19:00:00"), value: 2350 }, 
   { date: new Date("2025-12-31T21:15:00"), value: 2400 }
     ]
@@ -118,6 +118,7 @@ function Statisctics(){
     };
 
     return(
+        
         <div className="statistic__body">
             <h1 className="statistics__header">Статистика станици E-PROM</h1>
             <div className="full-width-line" />

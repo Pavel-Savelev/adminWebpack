@@ -1,3 +1,5 @@
+import { number } from "framer-motion";
+
 export type StationStatus = "ok" | "working" | "broken" | "absent";
 
 export type ChargerType = "GBT" | "CCS" | "Type1" | "Type2";
@@ -7,6 +9,11 @@ export interface ChargerStatus {
     status: StationStatus;
 }
 
+interface ILogItem{
+    productNumber: number,
+    message: string,
+    date: string
+}
 export interface IElectricalStation {
     id: string;
     chargers: ChargerStatus[];  
@@ -23,7 +30,7 @@ export interface IElectricalStation {
     photo?: string;
     comment?: string;
     updateData: string;
-    logs?: string;
+    logs: ILogItem[]
     stationChargerData: {
         total: number;
         phase_A: number;

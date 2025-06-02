@@ -1,51 +1,21 @@
 import { useState } from "react";
 import { IElectricalStation } from "../../../types/elecricalStation";
-
+import { SecondaryContentType } from "../stationDetails";
 interface StationMenuProps {
   station: IElectricalStation;
+  activeView: SecondaryContentType;
+  setActiveView: (view: SecondaryContentType) => void;
 }
 
-export function StationMenu({ station }:StationMenuProps) {
-  const [activeTab, setActiveTab] = useState("Информации");
-
-  const buttons = [
-    "Информации",
-    "Логи",
-    "Фотографии",
-    "Обновления",
-    "Комментарии",
-  ];
-
+export const StationMenu = ({ station, activeView, setActiveView }: StationMenuProps) => {
   return (
-    <>
-      <div className="station__menu__buttons">
-        {buttons.map((btn) => (
-          <button
-            key={btn}
-            onClick={() => setActiveTab(btn)}
-            className={activeTab === btn ? "active" : ""}
-          >
-            {btn}
-          </button>
-        ))}
-      </div>
-
-      {activeTab === "Информации" && (
-        <div className="information detail__item active">
-          <div className="station__info">
-            <p className="station__info__item">
-              Название в приложении: {station.nameOfApp}
-            </p>
-            <p className="station__info__item">IP: {station.ip}</p>
-            <p className="station__info__item">SSH: {station.ssh}</p>
-            <p className="station__info__item">
-              Серийный номер: {station.productNumber}
-            </p>
-            <p className="station__info__item">Адрес: {station.address}</p>
-            <p className="station__info__item">Регион: {station.region}</p>
-          </div>
-        </div>
-      )}
-    </>
+    <div className="station__menu__buttons">
+      <button onClick={() => setActiveView("map")} className={activeView === "map" ? "active" : ""}>Информация</button>
+      <button onClick={() => setActiveView("logs")} className={activeView === "logs" ? "active" : ""}>Логи</button>
+      <button onClick={() => setActiveView("photos")} className={activeView === "photos" ? "active" : ""}>Фотографии</button>
+      <button onClick={() => setActiveView("updates")} className={activeView === "updates" ? "active" : ""}>Обновления</button>
+      <button onClick={() => setActiveView("comments")} className={activeView === "comments" ? "active" : ""}>Комментарии</button>
+    </div>
   );
-}
+};
+

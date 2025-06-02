@@ -10,6 +10,7 @@
   flex-direction: column;
   height: 100vh;
   font-family: Arial, sans-serif;
+  overflow: hidden;
 }
 
 /* Header styles */
@@ -95,7 +96,6 @@
 
 
 .main-content {
-  min-height: 100vh;
   display: flex;
   flex: 1;
 }
