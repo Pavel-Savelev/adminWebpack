@@ -1,0 +1,21 @@
+.logs-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.names__of__params{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.param__menu__buttom{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 10px 5px;
+    min-width: 100px;
+}
+.logs-list{}

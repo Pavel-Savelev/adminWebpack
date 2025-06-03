@@ -7,8 +7,8 @@ import LinePlot from "../../components/graph";
 
 function MainContent() {
   const KazanPosition:ILocation = {
-    x: 55.85706151333579,
-    y: 49.120016809958116
+    lat: 55.85706151333579,
+    lng: 49.120016809958116
   }
   return (
     <div className="content-area">

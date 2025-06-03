@@ -10,6 +10,7 @@ function Menu() {
     { name: "Diagrams", path: "/statistica" },
     { name: "Транзакции", path: "/transactions" },
     { name: "Something", path: "/something" },
+    { name: "Logs", path: "/logs" },
   ];
 
   return (
@@ -30,3 +31,4 @@ function Menu() {
 }
 
 export default Menu;
+

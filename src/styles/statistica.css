@@ -130,19 +130,18 @@
     
     text-align: center;
     grid-area: nameX;
-    transform: rotate(0deg); /* Оси Y (надпись) оставляем в нормальной ориентации */
+    transform: rotate(0deg);
 }
 
 .BarChartComponent {
-    width: 100%; /* График будет занимать всю доступную ширину */
-    height: 300px; /* Высота графика */
+    width: 100%;
+    height: 300px; 
 }
 
 .charger__total-container{
     margin-bottom: 25px;
 }
 
-/* diagrams - statistica__header */
 .statistics-total {
     width: 100%;
     display: flex;

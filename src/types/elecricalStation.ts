@@ -9,7 +9,7 @@ export interface ChargerStatus {
     status: StationStatus;
 }
 
-interface ILogItem{
+export interface ILogItems{
     productNumber: number,
     message: string,
     date: string
@@ -24,13 +24,12 @@ export interface IElectricalStation {
     region: string;
     nameOfApp: string;
     location: {
-        x: number;
-        y: number;
+        lat: number;
+        lng: number;
     };
     photo?: string;
     comment?: string;
     updateData: string;
-    logs: ILogItem[]
     stationChargerData: {
         total: number;
         phase_A: number;

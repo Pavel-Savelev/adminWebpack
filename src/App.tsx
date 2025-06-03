@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateTable from "./pages/station-list/createTableOfStations";
 import StationDetailView from "./pages/station-detail/stationDetails";
 import Statisctics from "./pages/statistica/statistics";
-
+import LogsPage from "./pages/station-logs/logPage";
 function App() {
   return (
     <div className="App">
@@ -22,6 +22,7 @@ function App() {
         <Route path="/table" element={<CreateTable />} />
         <Route path="/station/:id" element={<StationDetailView />} />
         <Route path="/statistica" element={<Statisctics/>} />
+        <Route path="/logs" element={<LogsPage/>} />
         {/* <Route path="/transactions" element={<Transactions />} />
         <Route path="/something" element={<Something />} /> */}
         </Routes>

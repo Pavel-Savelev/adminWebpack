@@ -3,8 +3,8 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 
 export interface ILocation{
-  x:number;
-  y:number;
+  lat:number;
+  lng:number;
 }
 
 export interface GoogleMapComponentProps{
@@ -18,8 +18,8 @@ const containerStyle = {
 
 function GoogleMapComponent({positionMap}:GoogleMapComponentProps) {
   const center = {
-    lat: positionMap.x,
-    lng: positionMap.y  
+    lat: positionMap.lat,
+    lng: positionMap.lng  
   };
   
   return (
@@ -36,7 +36,7 @@ function GoogleMapComponent({positionMap}:GoogleMapComponentProps) {
         </GoogleMap>
       </LoadScript>
       <span>
-        Координаты: {(positionMap.x).toFixed(4)}, {(positionMap.y).toFixed(4)}
+        Координаты: {(positionMap?.lat ?? 0).toFixed(4)}, {(positionMap?.lng ?? 0).toFixed(4)}
       </span>
     </div>
     

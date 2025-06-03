@@ -10,17 +10,30 @@ import { ChargerStatus } from "../../types/elecricalStation";
 import { IElectricalStation } from "../../types/elecricalStation";
 import React from "react";
 import { useState } from "react";
-
-interface LocationState {
+import { useLogSocket } from "../../hooks/useLogSocket";
+import { ILogItems } from "../../types/elecricalStation";
+import { allLogs } from "../../data/stations";
+export interface IElectricalStationProps {
   station: IElectricalStation;
+}
+
+export interface IlogListProps {
+  logs: ILogItems[];
 }
 
 export type SecondaryContentType = "map" | "logs" | "updates" | "photos" | "comments";
 
 function StationDetails() {
   const location = useLocation();
-  const state = location.state as LocationState | undefined;
+
+  const state = location.state as IElectricalStationProps | undefined;
   const station = state?.station;
+  
+  const logSocketList = useLogSocket()
+  // const allLog = allLogs
+  const filterLogsStation = logSocketList.filter(
+    (log) => log.productNumber === station?.productNumber
+  );
   const [activeView,setActiveView] = useState<SecondaryContentType>("map")
 
   if (!station) return <p>Станция не найдена</p>;
@@ -28,7 +41,7 @@ function StationDetails() {
   const chargers = station.chargers || [];
 
   return (
-    <div className="detail__content">
+    <div className="content">
       <div className="primary style-window-border">
         <div className="type__of__charger">
           {chargers.map((charger: ChargerStatus) => (
@@ -64,7 +77,15 @@ function StationDetails() {
           // <PhotoComponent ></PhotoComponent>
         )}
         {activeView === "logs" && (
-          <CreateLogList station={station} />
+          <>
+            <h3 className="station_name">Station Logs | {station.nameOfApp}</h3>
+            <div className="header_log_list">
+              <h4 className="log_list_name">Name_Log</h4>
+              <button className="log_list_arrow"></button>
+            </div>
+            <CreateLogList station={station} logs ={filterLogsStation} />
+          </>
+          
         )}
       </div>
     </div>

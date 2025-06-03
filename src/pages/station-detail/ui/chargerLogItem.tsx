@@ -1,18 +1,20 @@
-import { ILogItemStationProps } from "./chargerLogList"
+import { ILogItems } from "../../../types/elecricalStation";
 
-function CreateLogItemStation({ station }: ILogItemStationProps) {
+interface ILogItemProps {
+  log: ILogItems;
+}
 
-    return (
-        <>  
-            <div className="divider-line"></div>
-            {station.logs.map((log, index) => (
-                <li key={index} className="log_list_item">
-                    <span className="log_item">Log: {log.message}</span>
-                    <div className="divider-line"></div>
-                </li>
-            ))}
-        </>
-    );
+function CreateLogItemStation({ log }: ILogItemProps) {
+  return (
+    <>
+      <li className="log_list_item">
+        <span className="log_item">
+          {log.date} — {log.message}
+        </span>
+        <div className="divider-line"></div>
+      </li>
+    </>
+  );
 }
 
 export default CreateLogItemStation;
