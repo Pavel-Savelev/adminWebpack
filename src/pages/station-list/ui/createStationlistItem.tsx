@@ -11,7 +11,7 @@ function CreateListItem({ station  }: Props) {
     
 
     const handleClick = () => {
-      navigate(`/station/${station.id}`, { 
+      navigate(`/station/${station.productNumber}`, { 
           state: { 
               station
           } 
@@ -20,10 +20,10 @@ function CreateListItem({ station  }: Props) {
   return (
     <li className="station__item__list">
       <button className="button button__stations__list" onClick={handleClick}>
-        <p>ID: {station.id}</p>
-        <p>IP: {station.ip}</p>
-        <p>SSH: {station.ssh}</p>
-        <p>Product Number: {station.productNumber}</p>
+        <p className="item-param station__item__list-id">ID: {station.id}</p>
+        <p className="item-param station__item__list-ip">IP: {station.ip}</p>
+        <p className="item-param station__item__list-ssh">SSH: {station.ssh}</p>
+        <p className="item-param station__item__list-product_number">Product Number: {station.productNumber}</p>
       </button>
     </li>
   );

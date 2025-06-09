@@ -12,26 +12,23 @@ import Statisctics from "./pages/statistica/statistics";
 import LogsPage from "./pages/station-logs/logPage";
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
       <Header />
       <div className="main-content">
-      <Router>
-      <Menu />
-      <Routes>  
-        <Route path="/" element={<MainContent />} />
-        <Route path="/table" element={<CreateTable />} />
-        <Route path="/station/:id" element={<StationDetailView />} />
-        <Route path="/statistica" element={<Statisctics/>} />
-        <Route path="/logs" element={<LogsPage/>} />
-        {/* <Route path="/transactions" element={<Transactions />} />
-        <Route path="/something" element={<Something />} /> */}
+        <Menu />
+        <Routes>
+          <Route path="/" element={<MainContent />} />
+          <Route path="/table" element={<CreateTable />} />
+          <Route path="/station/:productNumber" element={<StationDetailView />} />
+          <Route path="/statistica" element={<Statisctics />} />
+          <Route path="/logs" element={<LogsPage />} />
         </Routes>
-      </Router>
-
       </div>
       <ErrorButton />
       <ToastContainer />
-    </div>
+      </div>
+    </Router>
     
   );
 }

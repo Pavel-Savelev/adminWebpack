@@ -39,9 +39,10 @@ interface Props {
   sliderValue:number;
   startDate: string;
   endDate: string;
+  onBarClick?: (barData: IChargerStatType) => void;
 }
 
-const BarChartComponent: React.FC<Props> = ({ data, sliderValue, startDate, endDate }) => {
+const BarChartComponent: React.FC<Props> = ({ data, sliderValue, startDate, endDate, onBarClick }) => {
   const start = parseDDMMYYYY(startDate)?.getTime() ?? -Infinity;
   const end = parseDDMMYYYY(endDate)?.getTime() ?? Infinity;
 
@@ -59,10 +60,18 @@ const BarChartComponent: React.FC<Props> = ({ data, sliderValue, startDate, endD
         <ResponsiveContainer>
           <BarChart data={sortedData}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="chargerNameNumber" />
+            <XAxis dataKey="productNumber" />
             <YAxis />
             <Tooltip content={<CustomTooltip />} />
-            <Bar dataKey="count" fill="#007db3" />
+            <Bar dataKey="count"
+                cursor="pointer"
+                fill="#007db3"
+                onClick={(data) => {
+                console.log("Bar clicked:", data.payload);
+                if (onBarClick) {
+                    onBarClick(data.payload);
+                }
+                }} />
           </BarChart>
         </ResponsiveContainer>
       </div>

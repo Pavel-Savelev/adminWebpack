@@ -5,6 +5,10 @@ import './styles/modal.css'
 import './styles/statistica.css'
 import './styles/slider.css'
 import './styles/stationList.css'
+import './styles/logs.css'
+import './styles/light.css'
+import './styles/dark.css'
+import './styles/variables.css'
 import App from './App';
 
 const container = document.getElementById('root');

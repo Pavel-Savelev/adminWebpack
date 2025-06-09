@@ -1,0 +1,24 @@
+:root { 
+    --dark-bg-color:rgb(190, 58, 58);
+    --light-bg-color:rgb(255, 255, 255);
+
+    --dark-menu-bg-color:rgba(0, 0, 40, 1);
+    --light-menu-bg-color:#eeeeee;
+    
+    --decorate-border-color-light:rgba(53, 52, 48, 1);
+    --decorate-border-color-dark:rgba(255, 0, 112, 1);
+
+    --text-shadow:rgba(255, 0, 112, 1);
+
+    --style-border-dark:rgba(255, 0, 112, 1);
+    --style-border-light:rgba(53, 52, 48, 1);
+
+    --header-color-text-light:black;
+    --header-color-text-dark:rgba(219, 0, 255, 1);
+
+    --header-color-background-light:#b8b8b8;
+    --header-color-background-dark:#712c2c;
+
+    --special-content-background-light:#ccc;
+    --special-content-background-dark:#000000;
+}

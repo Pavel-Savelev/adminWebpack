@@ -1,0 +1,27 @@
+.page.theme_light {
+    --header-color-text: var(--header-color-text-light);
+    --header-color-background: var(--header-color-background-light);
+    --color-text: rgba(53, 52, 48, 1);
+    --container-titles:rgba(53, 52, 48, 1);
+    --menu-bg-color:var(--light-menu-bg-color);
+    --bg-color:var(--light-bg-color);
+    --border-color: rgba(50, 49, 45, 0.4);
+    --style-border:var(--style-border-light);
+    --decorate-border-color:var(--decorate-border-color-light);
+    --special-content-background:var(--special-content-background-light);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --header-color-text: var(--header-color-text-light);
+    --header-color-background: var(--header-color-background-light);
+    --color-text: rgba(53, 52, 48, 1);
+    --container-titles:rgba(53, 52, 48, 1);
+    --menu-bg-color:var(--light-menu-bg-color);
+    --bg-color:var(--light-bg-color);
+    --border-color: rgba(50, 49, 45, 0.4);
+    --style-border:var(--style-border-light);
+    --decorate-border-color:var(--decorate-border-color-light);
+    --special-content-background:var(--special-content-background-light);
+}
+}

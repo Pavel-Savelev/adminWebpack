@@ -6,7 +6,7 @@ export interface IDataCurrentStations{
 
 export interface IChargerStatType{
     date:Date;
-    chargerNameNumber:string,
+    productNumber: number;
     count:number
 }
 

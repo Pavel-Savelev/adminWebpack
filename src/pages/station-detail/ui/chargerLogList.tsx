@@ -3,11 +3,10 @@ import { IElectricalStation, ILogItems } from "../../../types/elecricalStation";
 import React, { useRef, useEffect } from "react";
 
 export interface ILogItemStationProps {
-  station: IElectricalStation;
   logs: ILogItems[];
 }
 
-function CreateLogList({ station, logs }: ILogItemStationProps) {
+function CreateLogList({ logs }: ILogItemStationProps) {
   const listRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
