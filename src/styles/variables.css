@@ -21,4 +21,13 @@
 
     --special-content-background-light:#ccc;
     --special-content-background-dark:#000000;
+
+    --special-content-hover-light:#e6e6e6;
+    --special-content-hover-dark:#bd6868;
+
+    --special-content-active-light:#c4c9cd;
+    --special-content-active-dark:#8097aa;
+
+    --time-line-hover-light:#bbb;
+    --time-line-hover-black:#a22323;
 }

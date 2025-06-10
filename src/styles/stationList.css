@@ -20,10 +20,9 @@
 }
 
 .station__item__list {
-    border: 2px solid #ccc;
+    border: 2px solid var(--special-content-background);
     border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: box-shadow 0.2s ease;
+    background-color: var(--bg-color);
     display: flex;
     flex-direction: row;
     transition: ease 300ms;
@@ -60,12 +59,6 @@
     justify-content: center;
     align-items: center;
 }
-
-/* .item-param ::after{
-    content: '|';
-    width: 5px;
-    height: 5px;
-} */
 
 .station__item__list-id{
     width: 170px;

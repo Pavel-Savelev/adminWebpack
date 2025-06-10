@@ -2,7 +2,7 @@
 
 .information h3{
   margin-bottom: 5px;
-  color: #555;
+  color: var(--color-text);
   font-size: 3vh;
 }
 
@@ -33,7 +33,7 @@
 
 .type__of__charger p{
   font-size: 4vh;
-  color: #efefef;
+  color: var(--color-text);
 }
 
 .station__info{
@@ -46,7 +46,7 @@
 .station__info__item{
   display: flex;
   align-items: center;
-  background-color: #ccc;
+  background-color: var(--special-content-background);
   border-radius: 5px ;
   min-height: 30px;
   font-size: 2.3vh;
@@ -68,7 +68,7 @@
   justify-content: center;
   background-color: rgb(100, 144, 100);
   border-radius: 5px;
-  color: rgb(255, 255, 255);
+  color: var(--color-text);
   transition: all 0.3s ease;
   font-size: 2vh;
 }
@@ -90,7 +90,7 @@
   padding: 15px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  background-color: #ccc;
+  background-color: var(--special-content-background);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   justify-content: center;
   text-align: center;
@@ -99,7 +99,7 @@
 
 .mercury__table__value {
   font-size: 18px;
-  background-color: #ffffff;
+  background-color: var(--special-content-background);
   border-radius: 5px;
   padding: 20px 30px;
   min-width: 80px;
@@ -132,7 +132,7 @@
 }
 
 .station__menu__buttons button:hover{
-  color: #c4c9cd;
+  color: var(--color-text);
 }
 
 
@@ -150,12 +150,12 @@
 
 
 .station__menu__buttons button.active {
-  color: #c4c9cd;
+  color: var(--special-content-active);
   
 }
 
 .station__menu__buttons button.active::after {
-  background-color: #c4c9cd;
+  background-color: var(--special-content-active);
   height: 3px;
 }
 
@@ -177,7 +177,7 @@
 
 .contaiener__short__logs{
   width: 100%;
-  background-color: rgb(133, 127, 127);
+  background-color: var(--special-content-background);
   border-radius: 5px;
 }
 .list__short__logs{
@@ -232,7 +232,7 @@ tbody td {
   flex-direction: row;
   align-items: center;
   box-shadow: inset 0 0 8px rgba(0,0,0,0.03);
-  background-color: #ccc;
+  background-color: var(--special-content-background);
   color: #555;
   height: 13%;
 }
@@ -249,7 +249,7 @@ tbody td {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #b2b2b2;
+  background-color: var(--special-content-background);
   border: 2px solid #707070;
   border-radius: 5px;
   padding: 20px 0;
@@ -268,12 +268,12 @@ tbody td {
 
 .station_name{
   font-size: 30px;
-  color: #555;
+  color: var(--color-text);
 }
 
 .log_list_name{
   margin-left: 10px;
-  color: #555;
+  color: var(--color-text);
 }
 
 .header_log_list{
@@ -296,7 +296,7 @@ tbody td {
 }
 
 .divider-line {
-  border-top: 2px solid #ccc;  
+  border-top: 2px solid var(--special-content-background);  
   margin: 12px 0;              
 }
 

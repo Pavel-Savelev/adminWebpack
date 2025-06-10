@@ -6,7 +6,7 @@ interface DiagramCreatorProps {
   title: string;
   data: DiagramDataPoint[];
   type?: string;
-  ChartComponent?: React.ComponentType<{ data: any[] }>; // ⬅ сюда можно передать другой график
+  ChartComponent?: React.ComponentType<{ data: any[] }>;
 }
 
 type Period = "Day" | "Week" | "Month" | "Year";
@@ -50,7 +50,6 @@ const DiagramCreator: React.FC<DiagramCreatorProps> = ({
   const filterData = (period: Period) => {
     const now = new Date();
 
-    // Приводим даты к объектам Date (если еще не объекты Date)
     const normalizedData = data.map((d) => ({
       ...d,
       date: d.date instanceof Date ? d.date : new Date(d.date),

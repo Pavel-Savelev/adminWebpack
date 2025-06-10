@@ -34,7 +34,7 @@
 .modal__contnent__row{
     display: flex;
     justify-content: space-between;
-    background-color: #ccc;
+    background-color: var(--special-content-background);
     border-radius: 5px;
 }
 
@@ -52,7 +52,7 @@
     cursor: pointer;
     background: none;
     border: none;
-    color: rgb(239, 236, 236);
+    color: var(--color-text);
     transition: all 0.2s ease-out;
 }
 
@@ -85,7 +85,7 @@
 .status__button button:hover {
     background-color: #747b90;
     border-color: black;
-    color: white;
+    color: var(--color-text);
 }
 
 .modal__contnet button {

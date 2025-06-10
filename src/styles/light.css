@@ -9,6 +9,9 @@
     --style-border:var(--style-border-light);
     --decorate-border-color:var(--decorate-border-color-light);
     --special-content-background:var(--special-content-background-light);
+    --special-content-hover:var(--special-content-hover-light);
+    --special-content-active:var(--special-content-active-light);
+    --time-line-hover:var(--time-line-hover-light);
 }
 
 @media (prefers-color-scheme: light) {
@@ -23,5 +26,9 @@
     --style-border:var(--style-border-light);
     --decorate-border-color:var(--decorate-border-color-light);
     --special-content-background:var(--special-content-background-light);
-}
+    --special-content-hover:var(--special-content-hover-light);
+    --special-content-active:var(--special-content-active-light);
+    --time-line-hover:var(--time-line-hover-light);
+
+  }
 }

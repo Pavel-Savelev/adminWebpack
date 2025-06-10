@@ -42,7 +42,7 @@
     gap: 20px;
     
 }
-/* range + date range */
+
 .date__range{
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@
 }
 
 .date__range input:hover{
-  background-color: #bbb;
+  background-color: var(--time-line-hover);
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   transition: background-color 0.2s ease box-shadow 0.2s ease;
 }

@@ -53,7 +53,8 @@ const WavyLineChart: React.FC<{
               fontSize: '14px',
               padding:'16px 10px',
               border:'3px solid #ccc',
-              borderRadius:'5px'
+              borderRadius:'5px',
+              color:'black'
             }}
           formatter={(value: number, name: string, props: any) => [`${value} кВт*ч`, 'Зарядка']}
           labelFormatter={(label: string, payload: any) => {
@@ -64,7 +65,7 @@ const WavyLineChart: React.FC<{
         <Line
           type="monotone"
           dataKey="charged"
-          stroke="#8884d8"
+          stroke="black"
           strokeWidth={2}
           dot={{ r: 4 }}
           activeDot={{ r: 6 }}

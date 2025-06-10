@@ -3,6 +3,7 @@
   margin-left: 10px;
   width: 100%;
   max-width: 250px;
+  color: var(--color-text);
 }
 
 .slider-value-wrapper {
@@ -41,7 +42,7 @@
 .custom-slider::-moz-range-thumb {
   width: 12px;
   height: 12px;
-  background: #ccc;
+  background: var(--special-content-background);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -75,7 +76,7 @@
   width: 12px;
   height: 12px;
   pointer-events:none ;
-  background: #ccc;
+  background: var(--special-content-background);
   border-radius: 50%;
 }
   

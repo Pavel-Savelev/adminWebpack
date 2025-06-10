@@ -23,7 +23,7 @@ code {
 .full-width-line {
   width: 100%;
   height: 2px;
-  background-color: #ccc;
+  background-color: var(--special-content-background);
   margin: 20px 0;
 }
 
@@ -31,7 +31,7 @@ code {
   width: 100%;
   border-radius: 4px;
   box-shadow: 1px 1px 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: var(--bg-color);
   margin-bottom: auto;
   padding: 0.5rem;
   height: calc(100vh - 130px);
