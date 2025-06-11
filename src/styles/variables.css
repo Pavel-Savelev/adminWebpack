@@ -1,33 +1,46 @@
-:root { 
-    --dark-bg-color:rgb(190, 58, 58);
-    --light-bg-color:rgb(255, 255, 255);
-
-    --dark-menu-bg-color:rgba(0, 0, 40, 1);
-    --light-menu-bg-color:#eeeeee;
+:root {
+    --dark-blue:#093748;
     
-    --decorate-border-color-light:rgba(53, 52, 48, 1);
-    --decorate-border-color-dark:rgba(255, 0, 112, 1);
+    --menu-item-hover-dark:#1f404c;
+    --menu-item-hover-light:#c4c9cd;
 
-    --text-shadow:rgba(255, 0, 112, 1);
+    --dark-bg-color: #112e39; 
+    --light-bg-color: #ffffff;
 
-    --style-border-dark:rgba(255, 0, 112, 1);
-    --style-border-light:rgba(53, 52, 48, 1);
+    --dark-menu-bg-color: #14323d; 
+    --light-menu-bg-color: #eeeeee;
 
-    --header-color-text-light:black;
-    --header-color-text-dark:rgba(219, 0, 255, 1);
+    --decorate-border-color-light: #353430;
+    --decorate-border-color-dark: #ff0070; 
 
-    --header-color-background-light:#b8b8b8;
-    --header-color-background-dark:#712c2c;
+    --text-shadow: rgba(255, 0, 112, 0.8);
 
-    --special-content-background-light:#ccc;
-    --special-content-background-dark:#000000;
+    --style-border-dark: #ff0070;
+    --style-border-light: #353430;
 
-    --special-content-hover-light:#e6e6e6;
-    --special-content-hover-dark:#bd6868;
+    --header-color-text-light: black;
+    --header-color-text-dark: #e0e0e0;
 
-    --special-content-active-light:#c4c9cd;
-    --special-content-active-dark:#8097aa;
+    --header-color-background-light: #b8b8b8;
+    --header-color-background-dark: #163744;
 
-    --time-line-hover-light:#bbb;
-    --time-line-hover-black:#a22323;
+    --special-content-background-light: #ccc;
+    --special-content-background-dark: #939393; 
+
+    
+    --special-content-hover-light: #e6e6e6;
+    --special-content-hover-dark: #333;
+
+    --special-content-active-light: #c4c9cd;
+    --special-content-active-dark: #636363;
+
+    --time-line-hover-light: #bbb;
+    --time-line-hover-black: #9e9e9e;
+
+    --color-text-dark: #d8d8d8;
+    --container-titles-dark: #ffffff;
+
+    --search-background-color-light:rgb(165, 165, 165);
+    --search-background-color-dark: var(--dark-blue);
+
 }

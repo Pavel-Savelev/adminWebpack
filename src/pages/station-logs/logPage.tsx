@@ -7,7 +7,7 @@ function LogsPage() {
   return (
     <div className="content log__page"
     style={{ 
-        height: 'calc(100vh - 130px)',
+        height: 'calc(100vh - 100px)',
       }}>
       <LogsList logs={logs} />
     </div>

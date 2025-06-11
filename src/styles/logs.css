@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    color: var(--color-text);
     background: var(--bg-color);
     flex-shrink: 0;
     font-size: 20px;
@@ -51,7 +52,7 @@
 }
 
 .log__page ul{
-    height: calc(-130px + 100vh)
+    height: calc(-110px + 100vh)
 }
 
 .log-item{

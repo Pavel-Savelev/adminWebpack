@@ -134,14 +134,14 @@ const LinePlot: React.FC<LinePlotProps> = ({
             x2={width - marginRight}
             y1={yScale(tick)}
             y2={yScale(tick)}
-            stroke="#a19a99"
+            stroke="var(--color-text)"
             strokeDasharray="4"
           />
         ))}
 
         <motion.path
           fill="none"
-          stroke="currentColor"
+          stroke="blue"
           strokeWidth="1.5"
           d={line(data) || ""}
           initial={{ pathLength: 0 }}
@@ -156,7 +156,7 @@ const LinePlot: React.FC<LinePlotProps> = ({
             cy={yScale(d.value)}
             r={3}
             fill="white"
-            stroke="currentColor"
+            stroke="var(--color-text)"
             onMouseOver={() => handleMouseOver(d)}
             onMouseOut={handleMouseOut}
             initial={{ scale: 0, opacity: 0 }}
@@ -180,6 +180,7 @@ const LinePlot: React.FC<LinePlotProps> = ({
             fontSize: "12px",
             pointerEvents: "none",
             whiteSpace: "nowrap",
+            border:'none'
           }}
         >
           {tooltip.content}

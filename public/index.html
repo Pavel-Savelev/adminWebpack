@@ -3,6 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <title>AdminSource</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark" />
+    <title>Переключатель темы</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      const savedTheme = localStorage.getItem("theme") || "light";
+      document.body.classList.add(`theme_${savedTheme}`);
+    </script>
   </head>
   <body>
     <div id="root"></div>

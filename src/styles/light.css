@@ -12,6 +12,9 @@
     --special-content-hover:var(--special-content-hover-light);
     --special-content-active:var(--special-content-active-light);
     --time-line-hover:var(--time-line-hover-light);
+    --search-background-color:var(--search-background-color-light);
+    --menu-item-hover:var(--menu-item-hover-light);
+    --window-border:white;
 }
 
 @media (prefers-color-scheme: light) {
@@ -29,6 +32,8 @@
     --special-content-hover:var(--special-content-hover-light);
     --special-content-active:var(--special-content-active-light);
     --time-line-hover:var(--time-line-hover-light);
-
+    --search-background-color:var(--search-background-color-light);
+    --menu-item-hover:var(--menu-item-hover-light);
+    --window-border:white;
   }
 }

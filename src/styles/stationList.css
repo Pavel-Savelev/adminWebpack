@@ -20,7 +20,7 @@
 }
 
 .station__item__list {
-    border: 2px solid var(--special-content-background);
+    border: 2px solid var(--menu-item-hover);
     border-radius: 8px;
     background-color: var(--bg-color);
     display: flex;
@@ -52,6 +52,7 @@
 .station__item__list p {
     margin: 4px 0;
     font-size: 14px;
+    color: var(--color-text);
 }
 
 .item-param{

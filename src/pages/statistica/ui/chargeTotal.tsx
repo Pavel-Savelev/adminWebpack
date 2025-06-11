@@ -65,7 +65,7 @@ const WavyLineChart: React.FC<{
         <Line
           type="monotone"
           dataKey="charged"
-          stroke="black"
+          stroke="var(--color-text)"
           strokeWidth={2}
           dot={{ r: 4 }}
           activeDot={{ r: 6 }}
