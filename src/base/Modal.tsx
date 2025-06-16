@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 type BaseModalProps = {
     onClose: () => void;
@@ -6,8 +6,14 @@ type BaseModalProps = {
 };
 
 const BaseModal = ({ onClose, children }: BaseModalProps) => {
+    const [isClosing, setIsClosing] = useState(false);
+
+    const closeWithAnimation = () => {
+        setIsClosing(true);
+    };
+
     const handleOverlayClick = () => {
-        onClose();
+        closeWithAnimation();
     };
 
     const handleModalClick = (e: React.MouseEvent) => {
@@ -17,25 +23,36 @@ const BaseModal = ({ onClose, children }: BaseModalProps) => {
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
-                onClose();
+                closeWithAnimation();
             }
         };
 
         document.addEventListener("keydown", handleKeyDown);
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown);
-        };
-    }, [onClose]);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, []);
+
+    useEffect(() => {
+        if (isClosing) {
+            const timer = setTimeout(() => {
+                onClose();
+            }, 300);
+            return () => clearTimeout(timer);
+        }
+    }, [isClosing, onClose]);
 
     return (
-        <div className="modal-overlay" onClick={handleOverlayClick}>
-            <div className="modal-wrapper" onClick={handleModalClick}>
-                <div className="modal-close-outside" onClick={onClose}>
+        <div
+            className={`modal-overlay ${isClosing ? "fade-out" : "fade-in"}`}
+            onClick={handleOverlayClick}
+        >
+            <div
+                className={`modal-wrapper ${isClosing ? "fade-out" : ""}`}
+                onClick={handleModalClick}
+            >
+                <div className="modal-close-outside" onClick={closeWithAnimation}>
                     ✕
                 </div>
-                <div className="modal-content">
-                    {children}
-                </div>
+                <div className="modal-content">{children}</div>
             </div>
         </div>
     );

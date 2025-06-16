@@ -9,6 +9,7 @@ import './styles/logs.css'
 import './styles/light.css'
 import './styles/dark.css'
 import './styles/variables.css'
+import './styles/specialSettings.css'
 import App from './App';
 
 const container = document.getElementById('root');

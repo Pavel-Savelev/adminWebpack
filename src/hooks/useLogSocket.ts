@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { ILogItems } from "../types/elecricalStation";
+// import { WS_URL } from "../utils/constants";
 
 export function useLogSocket() {
   const [logs, setLogs] = useState<ILogItems[]>([]);
@@ -29,7 +30,6 @@ export function useLogSocket() {
 
   useEffect(() => {
     if (lastJsonMessage) {
-      // Преобразуем одно сообщение или массив сообщений
       const raw = lastJsonMessage as
         | { time: string; serial_number: string; message: string }
         | { time: string; serial_number: string; message: string }[];

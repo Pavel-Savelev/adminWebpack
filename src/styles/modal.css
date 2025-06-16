@@ -7,7 +7,9 @@
     justify-content: center;
     z-index: 1000;
     font-size: large;
+    transition: opacity 1s ease;
 }
+
 
 
 .modal-content {
@@ -42,6 +44,7 @@
     position: relative;
     display: flex;
     align-items: flex-start;
+    transition: transform 1s ease, opacity 1s ease;
 }
 
 .modal-close-outside {
@@ -53,7 +56,7 @@
     background: none;
     border: none;
     color: var(--color-text);
-    transition: all 0.2s ease-out;
+    transition: all 1s ease-out;
 }
 
 .modal-close-outside:hover{
@@ -105,3 +108,14 @@
 }
 
 
+.modal-overlay.fade-in {
+    opacity: 1;
+}
+
+.modal-overlay.fade-out {
+    opacity: 0;
+}
+
+.modal-wrapper.fade-out {
+    opacity: 0;
+}
