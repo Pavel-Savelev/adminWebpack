@@ -15,6 +15,7 @@
     --search-background-color:var(--search-background-color-light);
     --menu-item-hover:var(--menu-item-hover-light);
     --window-border:white;
+    --modal-background:var(--modal-background-light);
 }
 
 @media (prefers-color-scheme: light) {
@@ -35,5 +36,6 @@
     --search-background-color:var(--search-background-color-light);
     --menu-item-hover:var(--menu-item-hover-light);
     --window-border:white;
+    --modal-background:var(--modal-background-light);
   }
 }

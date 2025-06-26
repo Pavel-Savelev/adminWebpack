@@ -13,7 +13,7 @@ export function MercuryTable({ station }: { station: IElectricalStation }) {
           <td> 
             <div>
               <div className="cell-label">Показания</div>
-              <div className="cell-value">{total} кВ*т</div>
+              <div className="cell-value">{total} кВ*ч</div>
             </div>
           </td>
           <td>

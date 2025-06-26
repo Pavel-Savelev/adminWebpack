@@ -1,10 +1,10 @@
 import React from "react";
-import { ILogItems } from "../../../types/elecricalStation";
+import { IDataStation } from "../../../types/elecricalStation";
 import { products } from "../../../data/stations";
 import CreateLogList from "../../station-detail/ui/chargerLogList";
 
 interface Props {
-  logs: ILogItems[];
+  logs: IDataStation[];
 }
 
 const LogsList: React.FC<Props> = ({ logs }) => {
@@ -18,7 +18,7 @@ const LogsList: React.FC<Props> = ({ logs }) => {
         </a>
       </div>
       <CreateLogList  
-        logs={logs}
+        data={logs}
       />
     </>
   );

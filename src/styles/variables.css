@@ -15,7 +15,7 @@
 
     --text-shadow: rgba(255, 0, 112, 0.8);
 
-    --style-border-dark: #ff0070;
+    --style-border-dark: #888888;
     --style-border-light: #353430;
 
     --header-color-text-light: black;
@@ -43,4 +43,6 @@
     --search-background-color-light:rgb(165, 165, 165);
     --search-background-color-dark: var(--dark-blue);
 
+    --modal-background-light: #b8b8b8;
+    --modal-background-dark:#212c42;
 }

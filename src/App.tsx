@@ -4,7 +4,7 @@ import Menu from "./components/menu";
 import MainContent from "./pages/main-screen/mainContent";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import ErrorButton from "./components/LogCreator";
+// import ErrorButton from "./components/LogCreator";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CreateTable from "./pages/station-list/createTableOfStations";
 import StationDetailView from "./pages/station-detail/stationDetails";
@@ -25,7 +25,6 @@ function App() {
           <Route path="/logs" element={<LogsPage />} />
         </Routes>
       </div>
-      <ErrorButton />
       <ToastContainer />
       </div>
     </Router>

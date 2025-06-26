@@ -1,15 +1,15 @@
-import { ILogItems } from "../../../types/elecricalStation";
+import { IDataStation } from "../../../types/elecricalStation";
 
-interface ILogItemProps {
-  log: ILogItems;
+interface IdataItemProps {
+  data: IDataStation;
 }
 
-function CreateLogItemStation({ log }: ILogItemProps) {
+function CreateDataItemStation({ data }: IdataItemProps) {
   return (
     <>
       <li className="log_list_item">
         <span className="log_item">
-          {log.date} — {log.message}
+          {data.date} — {data.message}
         </span>
         <div className="divider-line"></div>
       </li>
@@ -17,4 +17,4 @@ function CreateLogItemStation({ log }: ILogItemProps) {
   );
 }
 
-export default CreateLogItemStation;
+export default CreateDataItemStation;
