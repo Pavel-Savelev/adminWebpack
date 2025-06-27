@@ -3,34 +3,39 @@ import BaseModal from "../../../base/Modal";
 
 function CommentButton() {
   const [isModalOpen, setModal] = useState(false);
+  const [comment, setComment] = useState("");
 
-  const handleOpen = () => {
-    setModal(true);
+  const handleOpen = () => setModal(true);
+  const handleClose = () => setModal(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setComment(e.target.value);
   };
 
-  const handleClose = () => {
-    setModal(false);
-  };
 
   const handleSave = () => {
-    
-    console.log("Комментарий сохранен");
+    console.log("Комментарий сохранен:", comment);
+    setComment(""); // Очистка поля после сохранения
     handleClose();
   };
 
   const renderModalContent = () => (
     <div className="trigger__message">
-      <p>Подтверждение сохранения</p>
+      <p>Введите сохранения</p>
       <ul className="station__options-list">
         <li className="station__options-list-item">
-          <button onClick={handleSave} className="button options__button">
-          Сохранить
-        </button>
+          <input
+            type="text"
+            className="input options__input"
+            placeholder="Введите комментарий..."
+            value={comment}
+            onChange={handleInputChange}
+          />
         </li>
         <li className="station__options-list-item">
-          <button onClick={handleClose} className="button options__button">
-          Отмена
-        </button>
+          <button onClick={handleSave} className="button options__button">
+            Сохранить
+          </button>
         </li>
       </ul>
     </div>

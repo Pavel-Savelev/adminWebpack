@@ -1,5 +1,5 @@
 function WebStation(){
-    const optionsReboot = ['Web:','Web:', 'Web:', 'Web:']
+    const optionsReboot = ['Web Router:','Web: AGAVA',]
     return(
         <div className="reboot__options">
                 <p>

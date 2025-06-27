@@ -16,6 +16,7 @@
     --menu-item-hover:var(--menu-item-hover-dark);
     --window-border:var(--dark-blue);
     --modal-background:var(--modal-background-dark);
+    --graph-color:var(--graph-dark);
 }
 
 
@@ -36,7 +37,8 @@
         --time-line-hover: var(--time-line-hover-black);
         --search-background-color:var(--search-background-color-dark);
         --menu-item-hover:var(--menu-item-hover-dark);
-        --window-border:var(--dark-blue)
+        --window-border:var(--dark-blue);
         --modal-background:var(--modal-background-dark);
+        --graph-color:var(--graph-dark);
     }
   }

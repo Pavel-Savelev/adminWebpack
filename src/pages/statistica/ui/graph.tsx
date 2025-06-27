@@ -12,6 +12,14 @@ import {
 import { TooltipProps } from "recharts";
 import { parseDDMMYYYY } from "./dateUtil";
 
+interface Props {
+  data: IChargerStatType[];
+  sliderValue:number;
+  startDate: string;
+  endDate: string;
+  onBarClick?: (barData: IChargerStatType) => void;
+}
+
 const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>) => {
   if (active && payload && payload.length) {
     const item = payload[0].payload; 
@@ -31,16 +39,6 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<number, string>)
 
   return null;
 };
-
-
-// где лучше прописать пропс интерфейс??
-interface Props {
-  data: IChargerStatType[];
-  sliderValue:number;
-  startDate: string;
-  endDate: string;
-  onBarClick?: (barData: IChargerStatType) => void;
-}
 
 const BarChartComponent: React.FC<Props> = ({ data, sliderValue, startDate, endDate, onBarClick }) => {
   const start = parseDDMMYYYY(startDate)?.getTime() ?? -Infinity;

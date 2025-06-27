@@ -16,6 +16,7 @@
     --menu-item-hover:var(--menu-item-hover-light);
     --window-border:white;
     --modal-background:var(--modal-background-light);
+    --graph-color:var(--graph-light)
 }
 
 @media (prefers-color-scheme: light) {
@@ -37,5 +38,6 @@
     --menu-item-hover:var(--menu-item-hover-light);
     --window-border:white;
     --modal-background:var(--modal-background-light);
+    --graph-color:var(--graph-light)
   }
 }

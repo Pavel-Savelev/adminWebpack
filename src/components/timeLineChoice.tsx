@@ -2,6 +2,7 @@
 
     interface TimeLineChoiceProps {
       onDateChange: (start: string, end: string) => void;
+      onReset: () => void;
     }
 
     function isValidDate(dateStr: string): boolean {
@@ -15,7 +16,7 @@
     }
 
 
-    const TimeLineChoice: React.FC<TimeLineChoiceProps> = ({ onDateChange }) => {
+    const TimeLineChoice: React.FC<TimeLineChoiceProps> = ({ onDateChange, onReset }) => {
       const [startDate, setStartDate] = useState("");
       const [endDate, setEndDate] = useState("");
 
@@ -60,32 +61,42 @@
 
 
       return (
-        <>
-          <h2>Выбор периода для статистики</h2>
-          <div className="statistica__date">
-            <div className="date__range">
-              <input
-                type="text"
-                value={startDate}
-                onChange={(e) => handleDateChange(e, setStartDate)}
-                placeholder="DD/MM/YYYY"
-                maxLength={10} // Максимальная длина для формата дд/мм/гггг
-              />
-              <label>Начальный диапозон даты:</label>
+  <>
+            <h2>Выбор периода</h2>
+            <div className="statistica__date">
+              <div className="date__range">
+                <input
+                  type="text"
+                  value={startDate}
+                  onChange={(e) => handleDateChange(e, setStartDate)}
+                  placeholder="DD/MM/YYYY"
+                  maxLength={10}
+                />
+                <label>Начальный диапазон:</label>
+              </div>
+              <div className="date__range">
+                <input
+                  type="text"
+                  value={endDate}
+                  onChange={(e) => handleDateChange(e, setEndDate)}
+                  placeholder="DD/MM/YYYY"
+                  maxLength={10}
+                />
+                <label>Конечный диапазон:</label>
+              </div>
             </div>
-            <div className="date__range">
-              <input
-                type="text"
-                value={endDate}
-                onChange={(e) => handleDateChange(e, setEndDate)}
-                placeholder="DD/MM/YYYY"
-                maxLength={10}
-              />
-              <label>Конечный диапозон даты:</label>
-            </div>
-          </div>
-        </>
-      );
+            <button className="reset-button"
+              onClick={() => {
+                setStartDate("");
+                setEndDate("");
+                onReset();
+              }}
+                >
+              Сбросить даты
+          </button>
+          </>
+        );
+
     };
 
     export default TimeLineChoice;

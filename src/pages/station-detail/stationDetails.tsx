@@ -11,6 +11,9 @@ import { useStationComments } from "../../hooks/comments";
 import { ChargerStatus, IElectricalStation } from "../../types/elecricalStation";
 import { useStationAccidents } from "../../hooks/accidents";
 import CommentButton from "./ui/commentSend";
+import EventTable from "./ui/tableDataTime";
+import AvailabilityStation from "./ui/availabilityStation";
+import { mockData } from "../../data/dataTimeAvailbl";
 interface LocationState {
   station?: IElectricalStation;
 }
@@ -82,6 +85,16 @@ function StationDetails() {
               />
           </>
         );
+      case "availability":
+        return (
+          <>
+            <h3 className="window_name">Доступность | {station.nameOfApp}</h3>
+            <AvailabilityStation />
+            <EventTable events={mockData}></EventTable>
+          </>
+        );
+      
+
       default:
         return null;
     }

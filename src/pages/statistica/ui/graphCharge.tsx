@@ -1,12 +1,16 @@
-import TimeLineChoice from "./timeLineChoice";
+import TimeLineChoice from "../../../components/timeLineChoice";
 import DiagramCreator from "../../../components/diagramCreator";
 import React from "react";
 import { IChargerData } from "../../../types/diagram";
+import { useState } from "react";
 
 const ParentComponent = ({ data }: { data: IChargerData[] }) => {
   const [startDate, setStartDate] = React.useState<Date | null>(null);
   const [endDate, setEndDate] = React.useState<Date | null>(null);
-
+  const [dateRange, setDateRange] = useState<{ start: string; end: string }>({
+      start: "",
+      end: "",
+    });
   const handleDateChange = (startStr: string, endStr: string) => {
     const [sd, sm, sy] = startStr.split("/").map(Number);
     const [ed, em, ey] = endStr.split("/").map(Number);
@@ -22,7 +26,7 @@ const ParentComponent = ({ data }: { data: IChargerData[] }) => {
 
   return (
     <div>
-      <TimeLineChoice onDateChange={handleDateChange} />
+      <TimeLineChoice onDateChange={handleDateChange} onReset={() => setDateRange({ start: "", end: "" })}/>
       <DiagramCreator title="Статистика" data={filteredData} />
     </div>
   );

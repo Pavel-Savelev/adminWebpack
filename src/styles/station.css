@@ -501,6 +501,92 @@ tbody td {
 
 .options__button:disabled {
   opacity: 0.5; 
-  cursor: not-allowed; /* курсор указывает на запрет действия */
-  pointer-events: none; /* отключает hover-эффекты и клики */
+  cursor: not-allowed;
+  pointer-events: none;
 }
+
+.options__input{
+  padding: 10px 5px;
+  background: transparent;
+  border: 2px solid var(--style-border);
+  border-radius: 5px;
+  width: 100%;
+  color:var(--color-text);
+}
+
+.reset-button {
+  padding: 10px 20px;
+  color: var(--color-text);
+  background-color: var(--modal-background);
+  border-radius: 10px;
+  width: 200px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-on-primary);
+}
+
+
+.time__period {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.time__period__head{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.time__period__head th {
+  padding: 12px;
+  background-color: #f5f5f5;
+  text-align: center;
+  min-width: 100px;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.time__period__list td {
+  padding: 6px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.online {
+  color: rgb(64, 255, 0);
+}
+
+.offline {
+  color: gray;
+}
+
+.custom-thead{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.custom-tbody {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
