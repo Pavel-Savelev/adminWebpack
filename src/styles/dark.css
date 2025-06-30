@@ -16,7 +16,8 @@
     --menu-item-hover:var(--menu-item-hover-dark);
     --window-border:var(--dark-blue);
     --modal-background:var(--modal-background-dark);
-    --graph-color:var(--graph-dark);
+    --graph-online-color:var(--graph-online-dark);
+    --graph-offline-color:var(--graph-offline-dark);
 }
 
 
@@ -39,6 +40,7 @@
         --menu-item-hover:var(--menu-item-hover-dark);
         --window-border:var(--dark-blue);
         --modal-background:var(--modal-background-dark);
-        --graph-color:var(--graph-dark);
+        --graph-color:var(--graph-online-dark);
+        --graph-offline-color:var(--graph-offline-dark);
     }
   }

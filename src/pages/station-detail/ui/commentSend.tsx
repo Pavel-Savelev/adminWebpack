@@ -15,7 +15,7 @@ function CommentButton() {
 
   const handleSave = () => {
     console.log("Комментарий сохранен:", comment);
-    setComment(""); // Очистка поля после сохранения
+    setComment("");
     handleClose();
   };
 

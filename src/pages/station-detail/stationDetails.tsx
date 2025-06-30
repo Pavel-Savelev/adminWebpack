@@ -89,7 +89,7 @@ function StationDetails() {
         return (
           <>
             <h3 className="window_name">Доступность | {station.nameOfApp}</h3>
-            <AvailabilityStation />
+            <AvailabilityStation mockData = {mockData}/>
             <EventTable events={mockData}></EventTable>
           </>
         );
@@ -139,14 +139,7 @@ function StationDetails() {
           <DetailsButtons />
           <MercuryTable station={station} />
           
-          {[1, 2].map((i) => (
-            <div key={`table-${i}`}>
-              <div className={`table${i === 3 ? '3' : '2'}`}>
-                <span>name</span>
-                <div>graph</div>
-              </div>
-            </div>
-          ))}
+          
         </div>
         
         <div className="secondary style-window-border">

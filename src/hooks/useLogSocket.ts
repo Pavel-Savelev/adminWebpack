@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import useWebSocket, { ReadyState } from "react-use-websocket";
 import { IDataStation } from "../types/elecricalStation";
-// import { WS_URL } from "../utils/constants";
 
 export function useLogSocket() {
   const [logs, setLogs] = useState<IDataStation[]>([]);

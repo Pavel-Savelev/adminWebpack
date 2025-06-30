@@ -9,17 +9,15 @@ const RebootOptions: React.FC<IRebootOptionsProps> = ({
     onConfirm,
     onClose,
 }) => {
-    const [hardReboot, setHardReboot] = useState(false);
-    const [occpReboot, setOccpReboot] = useState(false);
+
     const [routerReboot, setRouterReboot]= useState(false)
     const [occprOffOn, setOccprOffOn]= useState(false)
     const [monitoringOffOn, setMonitoringOffOn]= useState(false)
-    const isDisabled = !hardReboot && !occpReboot && !routerReboot && !occprOffOn && !monitoringOffOn;
+    const isDisabled =  !routerReboot && !occprOffOn && !monitoringOffOn;
 
     useEffect(() => {
     return () => {
-        setHardReboot(false);
-        setOccpReboot(false);
+
         setRouterReboot(false);
         setOccprOffOn(false)
         setMonitoringOffOn(false)
@@ -36,29 +34,13 @@ const RebootOptions: React.FC<IRebootOptionsProps> = ({
         <p>Выберите способ перезагрузки</p>
 
         <ul className="list__message__params">
-            <li className="message__param hardReboot">
+            <li className="station__options-list-item">
                 <span>Hard Reboot:</span>
-                <label className="switch">
-                    <input
-                    type="checkbox"
-                    name="hardReboot"
-                    checked={hardReboot}
-                    onChange={(e) => setHardReboot(e.target.checked)}
-                    />
-                    <span className="slider round"></span>
-                </label>
+                <button className="options__button">Отправить</button>
             </li>
-            <li className="message__param occpReboot">
+            <li className="station__options-list-item">
                 <span>OCCP Reboot:</span>
-                <label className="switch">
-                    <input
-                    type="checkbox"
-                    name="occpReboot"
-                    checked={occpReboot}
-                    onChange={(e) => setOccpReboot(e.target.checked)}
-                    />
-                    <span className="slider round"></span>
-                </label>
+                <button className="options__button">Отправить</button>
             </li>
             <li className="message__param routerReboot">
                 <span>Router Reboot:</span>

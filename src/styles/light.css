@@ -16,7 +16,8 @@
     --menu-item-hover:var(--menu-item-hover-light);
     --window-border:white;
     --modal-background:var(--modal-background-light);
-    --graph-color:var(--graph-light)
+    --graph-online-color:var(--graph-online-light);
+    --graph-offline-color:var(--graph-offline-light);
 }
 
 @media (prefers-color-scheme: light) {
@@ -38,6 +39,7 @@
     --menu-item-hover:var(--menu-item-hover-light);
     --window-border:white;
     --modal-background:var(--modal-background-light);
-    --graph-color:var(--graph-light)
+    --graph-color:var(--graph-online-light);
+    --graph-offline-color:var(--graph-offline-light);
   }
 }

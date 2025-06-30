@@ -590,3 +590,21 @@ tbody td {
   gap: 0;
 }
 
+.availability__stat{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.availability__stat-item{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 15px;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-color);
+  border-radius: 5px;
+}
