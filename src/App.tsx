@@ -10,6 +10,8 @@ import CreateTable from "./pages/station-list/createTableOfStations";
 import StationDetailView from "./pages/station-detail/stationDetails";
 import Statisctics from "./pages/statistica/statistics";
 import LogsPage from "./pages/station-logs/logPage";
+import SessionOfStations from "./pages/sessions/session";
+
 function App() {
   return (
     <Router>
@@ -21,7 +23,8 @@ function App() {
           <Route path="/" element={<MainContent />} />
           <Route path="/table" element={<CreateTable />} />
           <Route path="/station/:productNumber" element={<StationDetailView />} />
-          <Route path="/statistica" element={<Statisctics />} />
+          <Route path="/diagrams" element={<Statisctics />} />
+          <Route path="/station/list" element={<SessionOfStations/>} />
           <Route path="/logs" element={<LogsPage />} />
         </Routes>
       </div>

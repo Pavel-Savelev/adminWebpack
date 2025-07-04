@@ -8,8 +8,6 @@ interface Props {
 
 function CreateListItem({ station  }: Props) {
     const navigate = useNavigate()
-    
-
     const handleClick = () => {
       navigate(`/station/${station.productNumber}`, { 
           state: { 

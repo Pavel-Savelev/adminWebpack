@@ -5,12 +5,11 @@ function Menu() {
   const [activeItem, setActiveItem] = useState("Main Screen");
 
   const menuItems = [
-    { name: "Main Screen", path: "/" },
-    { name: "Table", path: "/table" },
-    { name: "Diagrams", path: "/statistica" },
-    { name: "Транзакции", path: "/transactions" },
-    { name: "Something", path: "/something" },
-    { name: "Logs", path: "/logs" },
+    { name: "Главная", path: "/" },
+    { name: "Список станций", path: "/table" },
+    { name: "Диаграмы", path: "/diagrams" },
+    { name: "Статистика", path: "/station/list" },
+    { name: "Логи", path: "/logs" },
   ];
 
   return (

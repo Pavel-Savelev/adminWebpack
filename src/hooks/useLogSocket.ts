@@ -49,4 +49,3 @@ export function useLogSocket() {
 
   return logs;
 }
-

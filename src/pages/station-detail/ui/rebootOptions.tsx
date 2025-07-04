@@ -10,15 +10,13 @@ const RebootOptions: React.FC<IRebootOptionsProps> = ({
     onClose,
 }) => {
 
-    const [routerReboot, setRouterReboot]= useState(false)
+
     const [occprOffOn, setOccprOffOn]= useState(false)
     const [monitoringOffOn, setMonitoringOffOn]= useState(false)
-    const isDisabled =  !routerReboot && !occprOffOn && !monitoringOffOn;
+    const isDisabled = !occprOffOn && !monitoringOffOn;
 
     useEffect(() => {
     return () => {
-
-        setRouterReboot(false);
         setOccprOffOn(false)
         setMonitoringOffOn(false)
     };
@@ -42,17 +40,9 @@ const RebootOptions: React.FC<IRebootOptionsProps> = ({
                 <span>OCCP Reboot:</span>
                 <button className="options__button">Отправить</button>
             </li>
-            <li className="message__param routerReboot">
+            <li className="station__options-list-item">
                 <span>Router Reboot:</span>
-                <label className="switch">
-                    <input
-                    type="checkbox"
-                    name="routerReboot"
-                    checked={routerReboot}
-                    onChange={(e) => setRouterReboot(e.target.checked)}
-                    />
-                    <span className="slider round"></span>
-                </label>
+                <button className="options__button">Отправить</button>
             </li>
             <li className="message__param occprOffOn">
                 <span>Вкл/Выкл OCCP:</span>

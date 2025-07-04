@@ -2,6 +2,7 @@ import { products } from "../../data/stations"
 import CreateListItem from "./ui/createStationlistItem"
 import React, { JSX } from "react";
 import { useEffect } from "react";
+import useStations from "../../hooks/useStations";
 
 function CreateTable(): JSX.Element {
     const columns = [
@@ -14,11 +15,13 @@ function CreateTable(): JSX.Element {
             { key: "address", label: "Адрес" },
             { key: "region", label: "Регион" },
         ];
-    
-     useEffect(() => {
+    useEffect(() => {
         localStorage.setItem("stations", JSON.stringify(products.list));
     }, []);
 
+    const { stations, loading, error } = useStations();
+    
+    console.log(stations)
     return (
         <div className="station__table content">
             <div className="names__of__params">

@@ -33,6 +33,9 @@ export const StationMenu = ({ station, activeView, setActiveView }: StationMenuP
           <li className="dropdown__menu-item">
             <button onClick={() => setActiveView("availability")} className={activeView === "availability" ? "active" : ""}>Доступность</button>
           </li>
+          <li className="dropdown__menu-item">
+            <button onClick={() => setActiveView("session")} className={activeView === "session" ? "active" : ""}>Сессии</button>
+          </li>
         </ul>
     </div>
     </div>
