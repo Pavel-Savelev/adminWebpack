@@ -16,17 +16,19 @@ const containerStyle = {
   height: '390px'
 };
 
-function GoogleMapComponent({positionMap}:GoogleMapComponentProps) {
+function GoogleMapComponent({ positionMap }: GoogleMapComponentProps) {
+  if (!positionMap || positionMap.lat === undefined || positionMap.lng === undefined) {
+    return <div>Координаты недоступны</div>;
+  }
+
   const center = {
     lat: positionMap.lat,
-    lng: positionMap.lng  
+    lng: positionMap.lng,
   };
-  
+
   return (
-    <div className='map__content'>
-      <LoadScript
-        googleMapsApiKey="YOUR_API_KEY"
-      >
+    <div className="map__content">
+      <LoadScript googleMapsApiKey="YOUR_API_KEY">
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
@@ -36,11 +38,11 @@ function GoogleMapComponent({positionMap}:GoogleMapComponentProps) {
         </GoogleMap>
       </LoadScript>
       <span>
-        Координаты: {(positionMap?.lat ?? 0).toFixed(4)}, {(positionMap?.lng ?? 0).toFixed(4)}
+        Координаты: {center.lat.toFixed(4)}, {center.lng.toFixed(4)}
       </span>
     </div>
-    
   );
 }
+
 
 export default GoogleMapComponent

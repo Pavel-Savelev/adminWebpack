@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
-import { IDataStation } from "../types/elecricalStation";
+import { IDataCommentsStation } from "../types/elecricalStation";
 
 export function useStationComments(productNumber: number) {
-  const [comments, setComments] = useState<IDataStation[]>([]);
+  const [comments, setComments] = useState<IDataCommentsStation[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,7 +39,7 @@ export function useStationComments(productNumber: number) {
         throw new Error(`Ошибка: ${response.status}`);
       }
 
-      const newComment: IDataStation = await response.json();
+      const newComment: IDataCommentsStation = await response.json();
 
       setComments((prev) => [newComment, ...prev]);
     } catch (err) {

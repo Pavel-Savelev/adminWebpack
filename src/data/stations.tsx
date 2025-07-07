@@ -1,14 +1,14 @@
 import { IStations } from "../types/elecricalStation";
-import { IDataStation } from "../types/elecricalStation";
+import { IDataCommentsStation } from "../types/elecricalStation";
 
-export const allLogs: IDataStation[] = [
+export const allLogs: IDataCommentsStation[] = [
   
 ];
 
 export const products: IStations = {
     list: [
         {
-            id: 'efefewfa1231231dwd',
+            id: '123',
             chargers: [
                 {
                     type: "GBT",
@@ -34,14 +34,12 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             status:'online',
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+    
 
             stationChargerData: {
                 total: 123424,
@@ -51,7 +49,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1iii231231dwd',
+            id: '1234567',
             chargers: [
                 {
                     type: "GBT",
@@ -76,14 +74,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 1111",
-            photo: "https://via.placeholder.com/150",
             status:'offline',
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'lololo',
-            updateData: 'vivivivi',
             stationChargerData: {
                 total: 123424,
                 phase_A: 343,
@@ -92,7 +87,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1iii231231dwd',
+            id: '12345678',
             chargers: [
                 {
                     type: "GBT",
@@ -117,14 +112,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 1111",
-            photo: "https://via.placeholder.com/150",
             status:'offline',
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'lololo',
-            updateData: 'vivivivi',
         
             stationChargerData: {
                 total: 123424,
@@ -133,7 +125,7 @@ export const products: IStations = {
                 phase_C: 12,
             }
         },{
-            id: 'efefewfa1iii231231dwd',
+            id: '12345699',
             chargers: [
                 {
                     type: "GBT",
@@ -158,13 +150,10 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 1111",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'lololo',
-            updateData: 'vivivivi',
             status:'offline',
         
             stationChargerData: {
@@ -175,7 +164,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '123456114',
             chargers: [
                 {
                     type: "GBT",
@@ -202,13 +191,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -218,7 +205,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '123456214325',
             chargers: [
                 {
                     type: "GBT",
@@ -245,13 +232,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -261,7 +246,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '123456325',
             chargers: [
                 {
                     type: "GBT",
@@ -288,13 +273,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -304,7 +287,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '1234564363636',
             chargers: [
                 {
                     type: "GBT",
@@ -331,13 +314,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -347,7 +328,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '12345643463',
             status:'offline',
             chargers: [
                 {
@@ -374,13 +355,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -390,7 +369,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '12345623435647568',
             status:'offline',
             chargers: [
                 {
@@ -418,13 +397,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -434,7 +411,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '123456334568765',
             status:'offline',
             chargers: [
                 {
@@ -461,13 +438,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -477,7 +452,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '123456324567543265',
             status:'offline',
             chargers: [
                 {
@@ -504,13 +479,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -520,7 +493,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '123456325346o9876',
             status:'offline',
             chargers: [
                 {
@@ -547,13 +520,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -562,7 +533,7 @@ export const products: IStations = {
                 phase_C: 1123,
             }
         },{
-            id: 'efefewfa1231231dwd',
+            id: '1234560021',
             status:'offline',
             chargers: [
                 {
@@ -589,13 +560,11 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
+            
 
             stationChargerData: {
                 total: 123424,
@@ -605,7 +574,7 @@ export const products: IStations = {
             }
         },
         {
-            id: 'efefewfa1231231dwd',
+            id: '123456354365879785453',
             status:'offline',
             chargers: [
                 {
@@ -632,14 +601,10 @@ export const products: IStations = {
             address: "ROSTOV",
             region: "OBLAST",
             nameOfApp: "FLY 2342",
-            photo: "https://via.placeholder.com/150",
             location: {
                 lat: 55.8570,
                 lng: 49.1200
             },
-            comment: 'good',
-            updateData: '21.01.22',
-
             stationChargerData: {
                 total: 123424,
                 phase_A: 343,

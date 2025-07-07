@@ -1,14 +1,11 @@
 import React from "react";
-import { IDataStation } from "../../../types/elecricalStation";
+import { IDataLogs } from "../../../types/elecricalStation";
 import { products } from "../../../data/stations";
 import CreateLogList from "../../station-detail/ui/chargerLogList";
 
-interface Props {
-  logs: IDataStation[];
-}
 
-const LogsList: React.FC<Props> = ({ logs }) => {
-  const stations = products.list;
+
+const LogsList: React.FC<IDataLogs> = ({ logs }) => {
 
   return (
     <>

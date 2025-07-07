@@ -1,11 +1,8 @@
 import React from "react";
 import { IElectricalStation } from "../../../types/elecricalStation";
 
-interface MercuryTableProps {
-  station: IElectricalStation;
-}
 export function MercuryTable({ station }: { station: IElectricalStation }) {
-  const { total, phase_A, phase_B, phase_C } = station.stationChargerData;
+  const { total, phase_A, phase_B, phase_C } = station.stationChargerData ?? {};
   return (
     <table >
       <tbody>

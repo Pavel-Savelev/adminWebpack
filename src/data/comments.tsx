@@ -1,6 +1,6 @@
-import { IDataStation } from "../types/elecricalStation";
+import { IDataCommentsStation } from "../types/elecricalStation";
 
-export const comments: IDataStation[] = [
+export const comments: IDataCommentsStation[] = [
   {
     productNumber: 12345,
     message: "Станция перезагружена",

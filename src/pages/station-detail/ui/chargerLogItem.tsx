@@ -1,7 +1,7 @@
-import { IDataStation } from "../../../types/elecricalStation";
+import { IDataCommentsStation } from "../../../types/elecricalStation";
 
 interface IdataItemProps {
-  data: IDataStation;
+  data: IDataCommentsStation;
 }
 
 function CreateDataItemStation({ data }: IdataItemProps) {

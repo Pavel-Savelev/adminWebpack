@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { IDataStation } from "../types/elecricalStation";
+import { IDataCommentsStation } from "../types/elecricalStation";
 
 export function useStationAccidents(productNumber: number) {
-  const [accidents, setAccidents] = useState<IDataStation[]>([]);
+  const [accidents, setAccidents] = useState<IDataCommentsStation[]>([]);
 
   useEffect(() => {
     const fetchAccidents = async () => {

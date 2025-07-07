@@ -261,7 +261,9 @@
 }
 
 .dropdown__menu li button{
-  padding: 10px 0
+  padding: 10px 0;
+  width: 100%;
+
 }
 
 .dropdown__menu li:hover {
@@ -621,7 +623,7 @@ tbody td {
 }
 
 .session-table table{
-  width: 100%;
+  width: 100vh;
   display: flex;
   flex-direction: column;
   font-size: 0.6em;
@@ -643,14 +645,6 @@ tbody td {
   border-bottom-right-radius: 10px;
 }
 
-.session-table tbody{
-  width: 100%;
-  display: flex;
-  flex-direction:column ;
-  margin-top: 5px;
-  gap:0;
-}
-
 .session-table th{
   display: flex;
   flex-direction: column;
@@ -664,6 +658,15 @@ tbody td {
   background-color: var(--menu-item-hover);
 }
 
+.session-table tbody{
+  width: 100%;
+  display: flex;
+  flex-direction:column ;
+  margin-top: 5px;
+  gap:0;
+}
+
+
 .session-table td{
   display: flex;
   align-items: center;
@@ -672,9 +675,6 @@ tbody td {
   padding: 10px 0;
 }
 
-.session-table tr:hover{
-  background-color: var(--menu-item-hover);
-}
 
 .session-table tr {
   width: 100%;
@@ -682,9 +682,16 @@ tbody td {
   justify-content: space-between;
   flex-direction: row;
   gap: 0;
-  border-radius: 10px;
-  transition: background-color 0.2s ease-in-out; /* фикс */
+  border: 2px solid var(--menu-item-hover);
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  transition: background-color 0.2s ease; /* фикс */
 }
+
+.session-table tbody tr:hover{
+  background-color: var(--menu-item-hover);
+}
+
 
 .session-table select{
   width: 100%;

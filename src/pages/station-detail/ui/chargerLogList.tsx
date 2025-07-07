@@ -1,9 +1,9 @@
 import CreateDataItemStation from "./chargerLogItem";
-import { IDataStation } from "../../../types/elecricalStation";
+import { IDataCommentsStation } from "../../../types/elecricalStation";
 import React, { useRef, useEffect } from "react";
 
 export interface IDataStationProps {
-  data: IDataStation[];
+  data: IDataCommentsStation[];
   isLoading?: boolean;
   error?: string | null;
   emptyMessage?: string;

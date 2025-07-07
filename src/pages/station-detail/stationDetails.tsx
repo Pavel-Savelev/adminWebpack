@@ -9,7 +9,7 @@ import GoogleMapComponent from "../../components/GoogleMapComponent";
 import { useLogSocket } from "../../hooks/useLogSocket";
 import { useStationComments } from "../../hooks/comments";
 import {
-  ChargerStatus,
+  IConnectorStatus,
   IElectricalStation,
 } from "../../types/elecricalStation";
 import { useStationAccidents } from "../../hooks/accidents";
@@ -19,8 +19,6 @@ import AvailabilityStation from "./ui/availabilityStation";
 import { mockData } from "../../data/dataTimeAvailbl";
 import PhaseStatGraph from "./ui/phaseStatGraph";
 import { phaseData } from "../../data/phaseData";
-import DataTable from "./ui/sessionStation";
-import { dataSession } from "../../data/dataSession";
 import SessionTable from "./ui/sessionStation";
 interface LocationState {
   station?: IElectricalStation;
@@ -133,7 +131,7 @@ function StationDetails() {
     <div className="content">
       <div className="primary style-window-border">
         <div className="type__of__charger">
-          {chargers.map((charger: ChargerStatus) => (
+          {chargers.map((charger: IConnectorStatus) => (
             <ChargerTypeTag
               key={`${station.id}-${charger.type}`}
               charger={charger}

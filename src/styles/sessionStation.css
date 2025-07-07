@@ -1,23 +1,23 @@
-.session-statistic{
-    width: 100%;
-    padding: 15px 10px;
-    width: 100%;
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-    background-color: var(--bg-color);
-    color: var(--color-text);
+.session-statistic {
+  width: 100%;
+  padding: 15px 10px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  background-color: var(--bg-color);
+  color: var(--color-text);
 }
 
-.session-table{
+.session-statistic {
   width: 100%;
 }
 
-.session-table .full-width-line{
+.session-statistic .full-width-line {
   margin: 5px 0;
   height: 1px;
 }
 
-.session-statistic table{
+.session-statistic table {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -25,13 +25,14 @@
   border-radius: 10px;
   border-top: 1px solid var(--special-content-background);
   border-bottom: 1px solid var(--special-content-background);
+  margin-bottom: 40px;
 }
 
 .table-divide tbody > tr + tr {
-  border-top: 1px solid #D1D5DB; /* Tailwind's gray-300 */
+  border-top: 1px solid #d1d5db; /* Tailwind's gray-300 */
 }
 
-.session-statistic thead{
+.session-statistic thead {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -40,50 +41,72 @@
   border-bottom-right-radius: 10px;
 }
 
-.session-table tbody{
+
+.session-statistic tbody {
   width: 100%;
   display: flex;
-  flex-direction:column ;
+  flex-direction: column;
   margin-top: 5px;
-  gap:0;
+  gap: 5px;
 }
 
-.session-table th{
+.session-statistic th {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 2px;
-  transition: background-color 0.3s ease-in-out; /* фикс */
+  max-width: 16%;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 0;
 }
 
-.session-table th:hover{
+.session-statistic thead th:hover{
   background-color: var(--menu-item-hover);
 }
 
-.session-table td{
+.session-statistic td {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease-in-out; /* фикс */
-  padding: 10px 0;
+  padding: 18px 0;
 }
 
-.session-table tr:hover{
-  background-color: var(--menu-item-hover);
-}
-
-.session-table tr {
+.session-statistic tr {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   gap: 0;
-  border-radius: 10px;
-  transition: background-color 0.2s ease-in-out; /* фикс */
+  border: 2px solid var(--menu-item-hover);
+  border-radius: 8px;
+  background-color: var(--bg-color);
+  transition: background-color 0.2s ease; /* фикс */
 }
 
-.session-table select{
+.session-statistic tbody tr:hover{
+  background-color: var(--menu-item-hover);
+}
+
+.session-statistic input {
+  width: 100%;
+  font-size: 12px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  color: var(--color-text);
+  transition: background-color 0.3s ease-in-out;
+  padding: 10px 10px ;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.session-statistic input:hover {
+  background-color: var(--menu-item-hover);
+}
+
+/* .session-statistic select {
   width: 100%;
   font-size: 11px;
   background-color: var(--bg-color);
@@ -93,89 +116,13 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.session-table select:hover{
+.session-statistic select:hover {
   width: 100%;
   font-size: 11px;
   background-color: var(--menu-item-hover);
-
 }
 
-.session-table input {
-  width: 100%;
-  font-size: 12px;
-  background-color: var(--bg-color);
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-  color: var(--color-text);
-  transition: background-color 0.3s ease-in-out; /* фикс */
-}
-
-.session-table input:hover{
-  background-color: var(--menu-item-hover);
-}
-
-.col-connector{
-  min-width: 6em;
-  max-width: 6em;
-}
-
-.col-start
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 8.5em;
-  max-width: 8.6em;
-} 
-
-.col-end{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 9em;
-  max-width: 9em;
-}
-
-.col-consumption{
-  min-width: 7em;
-  max-width: 7em;
-}
-
-.col-startPercent{
-  min-width: 5em;
-  max-width: 5em;
-}
-
-.col-power{
-  min-width: 5em;
-  max-width: 5em;
-}
-
-.col-currentPower{
-  min-width: 6em;
-  max-width: 6em;
-}
-
-.col-maxPower{
-  min-width: 7em;
-  max-width: 7em;
-}
-
-.col-endReason{
-  display: flex;
-  justify-content: space-between;
-  min-width: 6em;
-  max-width: 6em;
-}
-
-.col-status{
-  display: flex;
-  justify-content: space-between;
-  min-width:7em;
-  max-width:7em; 
-}
-
-.input-hidden{
+.input-hidden {
   opacity: 0;
   pointer-events: none;
-}
+} */

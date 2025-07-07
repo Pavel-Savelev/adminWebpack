@@ -130,7 +130,6 @@ function SessionTable() {
                 ))}
               </select>
             </th>
-            <th className="full-width-line "></th>
             <th className="col-start border px-2 py-1 text-left">
               Start
               <input
