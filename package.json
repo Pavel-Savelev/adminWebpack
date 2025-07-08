@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://192.168.20.27:10014",
   "dependencies": {
     "@react-google-maps/api": "^2.20.6",
     "d3": "^7.9.0",

@@ -17,21 +17,21 @@ export interface Session {
 const sessionStatistica: Session[] = [
   {
     id: "123",
-    productNumber: "123",
+    productNumber: "12345",
     connectors: [
       { conectorName: "Type 2", completedValue: "80", outstandingValue: "20" },
     ],
   },
   {
-    id: "12345643463",
+    id: '124',
     productNumber: "222",
     connectors: [
       { conectorName: "CCS", completedValue: "60", outstandingValue: "40" },
     ],
   },
   {
-    id: "12345623435647568",
-    productNumber: "111",
+    id: "125",
+    productNumber: "96511",
     connectors: [
       { conectorName: "CCS", completedValue: "60", outstandingValue: "80" },
       { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },
@@ -39,7 +39,7 @@ const sessionStatistica: Session[] = [
     ],
   },
   {
-    id: "efefewfa1231231dwd",
+    id: "126",
     productNumber: "111",
     connectors: [
       { conectorName: "Chademo", completedValue: "60", outstandingValue: "80" },
@@ -48,22 +48,22 @@ const sessionStatistica: Session[] = [
     ],
   },
   {
-    id: "123456334568765",
-    productNumber: "222",
+    id: "127",
+    productNumber: "12345",
     connectors: [
       { conectorName: "Type 2", completedValue: "80", outstandingValue: "20" },
     ],
   },
   {
-    id: "123456324567543265",
+    id: "128",
     productNumber: "333",
     connectors: [
       { conectorName: "Chademo", completedValue: "2", outstandingValue: "80" },
     ],
   },
   {
-    id: "123456325346o9876",
-    productNumber: "1235",
+    id: "129",
+    productNumber: "12345",
     connectors: [
       { conectorName: "Chademo", completedValue: "60", outstandingValue: "80" },
       { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },
@@ -71,8 +71,8 @@ const sessionStatistica: Session[] = [
     ],
   },
   {
-    id: "1234560021",
-    productNumber: "1235",
+    id: "130",
+    productNumber: "12345",
     connectors: [
       { conectorName: "Chademo", completedValue: "60", outstandingValue: "80" },
       { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },
@@ -80,8 +80,8 @@ const sessionStatistica: Session[] = [
     ],
   },
   {
-    id: "123456354365879785453",
-    productNumber: "1255",
+    id: "131",
+    productNumber: "12345",
     connectors: [
       { conectorName: "Chademo", completedValue: "60", outstandingValue: "80" },
       { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },

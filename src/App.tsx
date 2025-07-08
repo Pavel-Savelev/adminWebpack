@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/table" element={<CreateTable />} />
-          <Route path="/station/:productNumber" element={<StationDetailView />} />
+          <Route path="/station/:id" element={<StationDetailView />} />
           <Route path="/diagrams" element={<Statisctics />} />
           <Route path="/station/list" element={<SessionOfStations/>} />
           <Route path="/logs" element={<LogsPage />} />

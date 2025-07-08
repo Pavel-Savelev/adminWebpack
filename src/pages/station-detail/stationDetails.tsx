@@ -38,7 +38,6 @@ export type SecondaryContentType =
 
 function StationDetails() {
   const location = useLocation();
-  const { productNumber: paramProductNumber } = useParams();
 
   const [station, setStation] = useState<IElectricalStation | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -49,21 +48,24 @@ function StationDetails() {
   const { comments } = useStationComments(station?.productNumber || 0);
   const { accidents } = useStationAccidents(station?.productNumber || 0);
 
+  const { id } = useParams();
+
   useEffect(() => {
     if ((location.state as LocationState)?.station) {
       setStation((location.state as LocationState).station!);
       setIsLoading(false);
-    } else if (paramProductNumber) {
+    } else if (id) {
       const allStations: IElectricalStation[] = JSON.parse(
         localStorage.getItem("stations") || "[]"
       );
       const found = allStations.find(
-        (s) => String(s.productNumber) === paramProductNumber
+        (s) => String(s.id) === id
       );
       setStation(found || null);
       setIsLoading(false);
     }
-  }, [location.state, paramProductNumber]);
+  }, [location.state, id]);
+
 
   const filterLogsStation = useMemo(
     () =>

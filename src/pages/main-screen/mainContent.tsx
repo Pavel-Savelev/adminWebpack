@@ -4,6 +4,7 @@ import React from "react";
 import GoogleMapComponent from "../../components/GoogleMapComponent";
 import { ILocation } from "../../components/GoogleMapComponent";
 import LinePlot from "../../components/graph";
+import StationInfo from "./ui/info";
 
 function MainContent() {
   const KazanPosition:ILocation = {
@@ -17,10 +18,7 @@ function MainContent() {
       </div>
 
       <div className="content-map">
-        <h3 className="map-header">Карта</h3>
-          <GoogleMapComponent 
-          positionMap = {KazanPosition}
-        />
+        <StationInfo/>
       </div>
     </div>
   );

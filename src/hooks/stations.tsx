@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-const wsUrl = process.env.REACT_APP_WS_STATIONS ?? "wss://192.168.20.27:8000/stations";
+const wsUrl = process.env.REACT_APP_WS_STATIONS ?? "ws://192.168.20.27:10014/stations";
 export function useStationsWS() {
   const [stations, setStations] = useState([]);
   const [error, setError] = useState<Error | null>(null);
@@ -9,14 +9,12 @@ export function useStationsWS() {
     ws.current = new WebSocket(wsUrl);
 
     ws.current.onopen = () => {
-      console.log("WebSocket connected");
       ws.current?.send(JSON.stringify({ action: "get_stations" }));
     };
 
     ws.current.onmessage = (event) => {
       try {
         const data = JSON.parse(event.data);
-        console.log("Parsed data:", data);
         if (data.stations) {
           setStations(data.stations);
         }

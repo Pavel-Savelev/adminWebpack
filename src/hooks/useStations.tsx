@@ -1,19 +1,40 @@
 import { useEffect, useState } from "react";
-
-export function useStations() {
-  const [stations, setStations] = useState([]);
+import { IStationDataTry } from "../types/elecricalStation";
+// не обходимо сделать один компанент для запросов GET POST
+export function useStationTry() {
+  const [stationHTTP, setStation] = useState<IStationDataTry | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/stations")
-      .then(res => res.json())
-      .then(data => setStations(data))
-      .catch(err => setError(err))
-      .finally(() => setLoading(false));
+    setLoading(true);
+    console.log("Запрос данных в useStationTry"); 
+
+    fetch("http://192.168.20.27:10014/telemetry/778", {
+        cache: "no-store",
+        headers: {
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          Pragma: "no-cache",
+          Expires: "0",
+        },
+      })
+
+      .then((res) => {
+        if (!res.ok) throw new Error("Ошибка HTTP: " + res.status);
+        return res.json();
+      })
+      .then((data: IStationDataTry) => {
+        setStation(data);
+        setLoading(false);
+      })
+      .catch((err: Error) => {
+        setError(err);
+        setLoading(false);
+      });
   }, []);
 
-  return { stations, loading, error };
+  console.log(stationHTTP,'http: одной станции');
+  return { stationHTTP, loading, error };
 }
 
-export default useStations
+export default useStationTry;

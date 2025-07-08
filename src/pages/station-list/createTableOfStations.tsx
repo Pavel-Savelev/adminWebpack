@@ -2,7 +2,6 @@ import { products } from "../../data/stations"
 import CreateListItem from "./ui/createStationlistItem"
 import React, { JSX } from "react";
 import { useEffect } from "react";
-import {useStationsWS} from "../../hooks/stations";
 
 function CreateTable(): JSX.Element {
     const columns = [
@@ -19,9 +18,7 @@ function CreateTable(): JSX.Element {
         localStorage.setItem("stations", JSON.stringify(products.list));
     }, []);
 
-    const { stations,  error } = useStationsWS();
-    
-    console.log(stations)
+
     return (
         <div className="station__table content">
             <div className="names__of__params">

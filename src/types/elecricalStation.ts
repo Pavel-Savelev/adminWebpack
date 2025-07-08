@@ -25,16 +25,47 @@ export interface IDataLogs{
     logs:IDataCommentsStation[]
 }
 
-interface IStationData{
-    station_id:string
-    voltage1?:number;
-    voltage2?:number;
-    voltage3?:number;
-    current1?:number;
-    current2?:number;
-    current3?:number;
-    power?:number;
-    status?:string;
+
+// развные интерфесы для вебсокета и апи
+export interface IStationDataTry{
+    station_id: string;           
+    voltage_l1: string;           
+    voltage_l2: string;           
+    voltage_l3: string;          
+    current_l1: string;           
+    current_l2: string;           
+    current_l3: string;           
+    power: string;                
+    energy: string;               
+    frequency: string;            
+    power_factor: string;         
+    connector_status: string;                   
+    action: string;               
+
+
+    chargers?: IConnectorStatus[]
+    // конектор статус?
+    // их должно быть несколько разве нет?
+
+    error_count?:string;
+    ip?: string;
+    ssh?: number;
+    productNumber?: number;
+    address?: string;
+    region?: string;
+    nameOfApp?: string;
+
+    location?: {
+        lat: number;
+        lng: number;
+    };
+    stationChargerData?: {
+        total: number;
+        phase_A: number;
+        phase_B: number;
+        phase_C: number;
+    };
+
     transaction_id?:string;
     energymeter_id?:string;
     start_time?:string;
@@ -82,10 +113,11 @@ interface IStationData{
     _delivered_voltage?:number;
     _delivered_current?:number;
     _battery_percentage?:number;
+
 }
 
 export interface IstationDataProp{
-    stations:IStationData[]
+    stations:IStationDataTry[]
 }
 
 export interface IElectricalStation {
