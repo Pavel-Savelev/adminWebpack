@@ -1,93 +1,139 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import TimeLineChoice from "../../../components/timeLineChoice";
 
-export interface ConnectorInfo {
-  conectorName: string;
-  completedValue: string;
-  outstandingValue: string;
+type SessionStatus = 'completed' | 'failed';
+
+interface ChargingSession {
+  id: string;
+  startTime: Date;
+  endTime: Date | null;
+  status: SessionStatus;
+  energyDelivered?: number;
 }
 
-export interface Session {
+interface Connector {
+  name: string;
+  currentSession: ChargingSession | null;
+  sessionsHistory: ChargingSession[];
+}
+
+interface Product {
   id: string;
   productNumber: string;
-  connectors: ConnectorInfo[];
+  connectors: Connector[];
+
 }
 
-const sessionStatistica: Session[] = [
+const chargingStationsDB: Product[] = [
   {
     id: "123",
-    productNumber: "12345",
+    productNumber: "vupsen",
     connectors: [
-      { conectorName: "Type 2", completedValue: "80", outstandingValue: "20" },
-    ],
+      {
+        name: "Type 2",
+        currentSession: {
+          id: "sess-001",
+          startTime: new Date("2023-05-16T13:15:00"),
+          endTime: null,
+          status: "completed",
+          energyDelivered: 12.4
+        },
+        sessionsHistory: [
+          {
+            id: "sess-000",
+            startTime: new Date("2023-05-16T10:00:00"),
+            endTime: new Date("2023-05-16T11:30:00"),
+            status: "completed",
+            energyDelivered: 24.5
+          },
+          {
+            id: "sess-002",
+            startTime: new Date("2023-05-15T18:00:00"),
+            endTime: new Date("2023-05-15T18:05:00"),
+            status: "failed"
+          }
+        ]
+      }
+    ]
   },
   {
-    id: '124',
-    productNumber: "222",
+    id: "124",
+    productNumber: "pupsen",
+
     connectors: [
-      { conectorName: "CCS", completedValue: "60", outstandingValue: "40" },
-    ],
+      {
+        name: "CCS",
+        currentSession: null,
+        sessionsHistory: [
+          {
+            id: "sess-003",
+            startTime: new Date("2023-05-16T08:00:00"),
+            endTime: new Date("2023-05-16T10:00:00"),
+            status: "completed",
+            energyDelivered: 50.0
+          },
+          {
+            id: "sess-031",
+            startTime: new Date("2024-05-16T08:00:00"),
+            endTime: new Date("2024-05-16T10:00:00"),
+            status: "completed",
+            energyDelivered: 50.0
+          },
+          {
+            id: "sess-032",
+            startTime: new Date("2025-05-16T08:00:00"),
+            endTime: new Date("2025-05-16T10:00:00"),
+            status: "completed",
+            energyDelivered: 50.0
+          },
+          {
+            id: "sess-033",
+            startTime: new Date("2025-05-16T08:05:00"),
+            endTime: new Date("2025-05-16T10:10:00"),
+            status: "completed",
+            energyDelivered: 50.0
+          },
+        ]
+      },
+      {
+        name: "Chademo",
+        currentSession: {
+          id: "sess-004",
+          startTime: new Date("2023-05-16T12:00:00"),
+          endTime: null,
+          status: "completed"
+        },
+        sessionsHistory: []
+      }
+    ]
   },
   {
     id: "125",
-    productNumber: "96511",
-    connectors: [
-      { conectorName: "CCS", completedValue: "60", outstandingValue: "80" },
-      { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },
-      { conectorName: "Type 2", completedValue: "0", outstandingValue: "20" },
-    ],
-  },
-  {
-    id: "126",
-    productNumber: "111",
-    connectors: [
-      { conectorName: "Chademo", completedValue: "60", outstandingValue: "80" },
-      { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },
-      { conectorName: "Type 2", completedValue: "0", outstandingValue: "20" },
-    ],
-  },
-  {
-    id: "127",
     productNumber: "12345",
+
     connectors: [
-      { conectorName: "Type 2", completedValue: "80", outstandingValue: "20" },
-    ],
-  },
-  {
-    id: "128",
-    productNumber: "333",
-    connectors: [
-      { conectorName: "Chademo", completedValue: "2", outstandingValue: "80" },
-    ],
-  },
-  {
-    id: "129",
-    productNumber: "12345",
-    connectors: [
-      { conectorName: "Chademo", completedValue: "60", outstandingValue: "80" },
-      { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },
-      { conectorName: "Type 2", completedValue: "0", outstandingValue: "20" },
-    ],
-  },
-  {
-    id: "130",
-    productNumber: "12345",
-    connectors: [
-      { conectorName: "Chademo", completedValue: "60", outstandingValue: "80" },
-      { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },
-      { conectorName: "Type 2", completedValue: "0", outstandingValue: "20" },
-    ],
-  },
-  {
-    id: "131",
-    productNumber: "12345",
-    connectors: [
-      { conectorName: "Chademo", completedValue: "60", outstandingValue: "80" },
-      { conectorName: "GBT", completedValue: "20", outstandingValue: "40" },
-      { conectorName: "Type 2", completedValue: "0", outstandingValue: "20" },
-    ],
-  },
+      {
+        name: "GBT",
+        currentSession: null,
+        sessionsHistory: [
+          {
+            id: "sess-005",
+            startTime: new Date("2023-05-16T07:00:00"),
+            endTime: new Date("2023-05-16T07:45:00"),
+            status: "failed"
+          },
+          {
+            id: "sess-006",
+            startTime: new Date("2023-05-15T16:00:00"),
+            endTime: new Date("2023-05-15T18:30:00"),
+            status: "completed",
+            energyDelivered: 65.2
+          }
+        ]
+      }
+    ]
+  }
 ];
 
 const connectorTypes = ["CCS", "Chademo", "Type 2", "GBT", "Type 1"];
@@ -98,14 +144,22 @@ function SessionStatistica() {
   const [sortDirection, setSortDirection] = useState<"asc" | "desc" | null>(null);
   const [stationFilter, setStationFilter] = useState<string>("");
 
-  const navigate = useNavigate();
+  const [startDate, setStartDate] = useState<string | null>(null);
+  const [endDate, setEndDate] = useState<string | null>(null);
 
-  const handleClick = (session: Session) => {
-    navigate(`/station/${session.id}`, {
-      state: { station: session },
-    });
+  const handleDateChange = (start: string, end: string) => {
+    setStartDate(start);
+    setEndDate(end);
   };
 
+  const handleReset = () => {
+    setStartDate(null);
+    setEndDate(null);
+  };
+
+
+
+  const navigate = useNavigate();
 
   const toggleSort = (column: string) => {
     if (sortColumn !== column) {
@@ -118,84 +172,111 @@ function SessionStatistica() {
     }
   };
 
-  const getCompletionPercent = (connectors: ConnectorInfo[]): number => {
-    let completed = 0;
-    let outstanding = 0;
+  const parsedStart = startDate
+    ? new Date(...(startDate.split("/").reverse().map((n, i) => i === 1 ? Number(n) - 1 : Number(n)) as [number, number, number]))
+    : null;
 
-    connectors.forEach((c) => {
-      completed += Number(c.completedValue);
-      outstanding += Number(c.outstandingValue);
+  const parsedEnd = endDate
+    ? new Date(...(endDate.split("/").reverse().map((n, i) => i === 1 ? Number(n) - 1 : Number(n)) as [number, number, number]))
+    : null;
+
+
+  if (parsedEnd) {
+    parsedEnd.setHours(23, 59, 59, 999);
+  }
+
+
+  const getCounts = (
+    connectors: Connector[],
+    type?: string,
+    start?: Date | null,
+    end?: Date | null
+  ) => {
+    let completed = 0;
+    let failed = 0;
+
+    connectors.forEach((connector) => {
+      if (type && connector.name.toLowerCase() !== type.toLowerCase()) return;
+
+      const allSessions: ChargingSession[] = [
+        ...(connector.sessionsHistory || []),
+        ...(connector.currentSession ? [connector.currentSession] : []),
+      ];
+
+      allSessions.forEach((session) => {
+        const sessionStart = new Date(session.startTime);
+        if (
+          (start && sessionStart < start) ||
+          (end && sessionStart > end)
+        ) {
+          return;
+        }
+
+        if (session.status === "completed") completed++;
+        if (session.status === "failed") failed++;
+      });
     });
 
-    const total = completed + outstanding;
-    return total > 0 ? (completed / total) * 100 : 0;
+    return { completed, failed };
   };
 
-  const getConnectorPercent = (connectors: ConnectorInfo[], type: string): number => {
-    const found = connectors.find(
-      (c) => c.conectorName.toLowerCase() === type.toLowerCase()
-    );
-    if (!found) return -1;
 
-    const completed = Number(found.completedValue);
-    const outstanding = Number(found.outstandingValue);
-    const total = completed + outstanding;
-    return total > 0 ? (completed / total) * 100 : 0;
+  const getConnectorValue = (connectors: Connector[], type: string): string => {
+    const { completed, failed } = getCounts(connectors, type, parsedStart, parsedEnd);
+    const total = completed + failed;
+    if (total === 0) return "—";
+    const percent = Math.round((completed / total) * 100);
+    return `${completed} / ${failed} (${percent}%)`;
   };
 
-  const getConnectorValue = (
-    connectors: ConnectorInfo[],
-    type: string
-  ): string => {
-    const found = connectors.find(
-      (c) => c.conectorName.toLowerCase() === type.toLowerCase()
-    );
-    if (!found) return "—";
-
-    const completed = Number(found.completedValue);
-    const outstanding = Number(found.outstandingValue);
-    const total = completed + outstanding;
-    const percentCompleted = total > 0 ? (completed / total) * 100 : 0;
-    const roundedPercent = Math.round(percentCompleted);
-    return `${completed} / ${outstanding} (${roundedPercent}%)`;
+  const getTotalValue = (connectors: Connector[]): string => {
+    const { completed, failed } = getCounts(connectors, undefined, parsedStart, parsedEnd);
+    const total = completed + failed;
+    const percent = total ? Math.round((completed / total) * 100) : 0;
+    return `${completed} / ${failed} (${percent}%)`;
   };
 
-  const getTotal = (connectors: ConnectorInfo[]): string => {
-    let completed = 0;
-    let outstanding = 0;
+  const getSortValue = (product: Product): number => {
+    if (sortColumn === "Общее") {
+      const { completed, failed } = getCounts(product.connectors, undefined, parsedStart, parsedEnd);
+      const total = completed + failed;
+      return total ? completed / total : -1;
+    } else if (connectorTypes.includes(sortColumn!)) {
+      const { completed, failed } = getCounts(product.connectors, sortColumn!, parsedStart, parsedEnd);
+      const total = completed + failed;
+      return total ? completed / total : -1;
+    }
+    return -1;
+  };
 
-    connectors.forEach((c) => {
-      completed += Number(c.completedValue);
-      outstanding += Number(c.outstandingValue);
+  const filteredData = chargingStationsDB
+    .filter((station) => {
+      const matchesFilter = station.productNumber
+        .toLowerCase()
+        .includes(stationFilter.toLowerCase());
+
+      if (!parsedStart || !parsedEnd) return matchesFilter;
+
+      const inDateRange = station.connectors.some((connector) =>
+        [...connector.sessionsHistory, connector.currentSession]
+          .filter((s): s is ChargingSession => Boolean(s))
+          .some((session) => {
+            const sessionStart = new Date(session.startTime);
+            return sessionStart >= parsedStart && sessionStart <= parsedEnd;
+          })
+      );
+
+      return matchesFilter && inDateRange;
     });
 
-    const total = completed + outstanding;
-    const percentCompleted = total > 0 ? Math.round((completed / total) * 100) : 0;
 
-    return `${completed} / ${outstanding} (${percentCompleted}%)`;
-  };
 
-  const filteredData = sessionStatistica.filter((s) =>
-    s.productNumber.toLowerCase().includes(stationFilter.toLowerCase())
-  );
 
   const sortedData = [...filteredData].sort((a, b) => {
-
     if (!sortDirection || !sortColumn) return 0;
-
-    let aValue = 0;
-    let bValue = 0;
-
-    if (sortColumn === "Общее") {
-      aValue = getCompletionPercent(a.connectors);
-      bValue = getCompletionPercent(b.connectors);
-    } else if (connectorTypes.includes(sortColumn)) {
-      aValue = getConnectorPercent(a.connectors, sortColumn);
-      bValue = getConnectorPercent(b.connectors, sortColumn);
-    } else {
-      return 0;
-    }
-
+    const aValue = getSortValue(a);
+    const bValue = getSortValue(b);
+    if (aValue === -1 && bValue === -1) return 0;
     if (aValue === -1) return 1;
     if (bValue === -1) return -1;
 
@@ -204,14 +285,17 @@ function SessionStatistica() {
 
   return (
     <div className="p-4">
+      <TimeLineChoice onDateChange={handleDateChange} onReset={handleReset} />
+
       <table className="table-auto w-full text-sm border border-gray-400 border-collapse">
         <thead className="bg-gray-100">
           <tr>
             <th
               className="border px-2 py-1 text-left"
               style={{ width: `${percentPerColumn}%` }}
-            >Станция
-               <input
+            >
+              Станция
+              <input
                 type="text"
                 placeholder="Введите станцию"
                 className="mt-1 block w-full text-sm border border-gray-300 rounded px-1"
@@ -231,8 +315,8 @@ function SessionStatistica() {
                   ? sortDirection === "asc"
                     ? "↑"
                     : sortDirection === "desc"
-                    ? "↓"
-                    : ""
+                      ? "↓"
+                      : ""
                   : ""}
               </th>
             ))}
@@ -246,37 +330,34 @@ function SessionStatistica() {
                 ? sortDirection === "asc"
                   ? "↑"
                   : sortDirection === "desc"
-                  ? "↓"
-                  : ""
+                    ? "↓"
+                    : ""
                 : ""}
             </th>
           </tr>
         </thead>
         <tbody>
-          {sortedData.map((session) => (
+          {sortedData.map((filteredData) => (
             <tr
-              key={session.id}
+              key={filteredData.id}
               className="border-b border-gray-300 cursor-pointer"
-              onClick={() => navigate(`/station/${session.id}`)}
+              onClick={() => navigate(`/station/${filteredData.id}`)}
             >
-              <td className="border px-2 py-1">{session.productNumber}</td>
+              <td className="border px-2 py-1">{filteredData.productNumber}</td>
               {connectorTypes.map((type) => (
                 <td key={type} className="border px-2 py-1">
-                  {getConnectorValue(session.connectors, type)}
+                  {getConnectorValue(filteredData.connectors, type)}
                 </td>
               ))}
-              <td className="border px-2 py-1">{getTotal(session.connectors)}</td>
+              <td className="border px-2 py-1">
+                {getTotalValue(filteredData.connectors)}
+              </td>
             </tr>
           ))}
         </tbody>
-
       </table>
     </div>
-  );
+  )
 }
 
 export default SessionStatistica;
-
-// не работает навигация при нажатии на разные кнопки но ведут в одно место
-//скорее всего потому что рендерится по данным 
-

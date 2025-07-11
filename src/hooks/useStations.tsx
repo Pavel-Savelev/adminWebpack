@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { IStationDataTry } from "../types/elecricalStation";
 // не обходимо сделать один компанент для запросов GET POST
 export function useStationTry() {
+
   const [stationHTTP, setStation] = useState<IStationDataTry | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -10,14 +11,7 @@ export function useStationTry() {
     setLoading(true);
     console.log("Запрос данных в useStationTry"); 
 
-    fetch("http://192.168.20.27:10014/telemetry/778", {
-        cache: "no-store",
-        headers: {
-          "Cache-Control": "no-cache, no-store, must-revalidate",
-          Pragma: "no-cache",
-          Expires: "0",
-        },
-      })
+    fetch("http://192.168.20.27:10014/telemetry/778")
 
       .then((res) => {
         if (!res.ok) throw new Error("Ошибка HTTP: " + res.status);

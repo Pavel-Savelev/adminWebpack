@@ -29,7 +29,7 @@
 }
 
 .table-divide tbody > tr + tr {
-  border-top: 1px solid #d1d5db; /* Tailwind's gray-300 */
+  border-top: 1px solid #d1d5db;
 }
 
 .session-statistic thead {
@@ -53,8 +53,6 @@
 .session-statistic th {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
   gap: 2px;
   max-width: 16%;
   align-items: center;
@@ -82,11 +80,13 @@
   border: 2px solid var(--menu-item-hover);
   border-radius: 8px;
   background-color: var(--bg-color);
-  transition: background-color 0.2s ease; /* фикс */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
 }
 
 .session-statistic tbody tr:hover{
   background-color: var(--menu-item-hover);
+  border:2px solid rgb(135, 135, 135);
 }
 
 .session-statistic input {

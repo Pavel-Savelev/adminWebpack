@@ -312,9 +312,6 @@ table {
   margin-top: 5px;
 }
 
-thead {
-  display: none;
-}
 
 tbody {
   display: flex;
@@ -671,7 +668,7 @@ tbody td {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease-in-out; /* фикс */
+  transition: background-color 0.3s ease-in-out;
   padding: 10px 0;
 }
 
@@ -690,6 +687,7 @@ tbody td {
 
 .session-table tbody tr:hover{
   background-color: var(--menu-item-hover);
+  border:2px solid rgb(135, 135, 135);
 }
 
 

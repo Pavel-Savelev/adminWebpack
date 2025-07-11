@@ -49,7 +49,168 @@ export const products: IStations = {
             }
         },
         {
-            id: '124',
+            id: '100',
+            chargers: [
+                {
+                    type: "GBT",
+                    status: "ok",
+                },
+                {
+                    type: "CCS",
+                    status: "absent",
+                },
+                {
+                    type: "Type1",
+                    status: "absent"
+                },
+                {
+                    type: "Type2",
+                    status: "broken",
+
+                }
+            ],
+            ip: '113.134134.1231241',
+            ssh: 3424123,
+            productNumber: 12345,
+            address: "ROSTOV",
+            region: "OBLAST",
+            nameOfApp: "FLY 2342",
+            status:'online',
+            location: {
+                lat: 55.8570,
+                lng: 49.1200
+            },
+    
+
+            stationChargerData: {
+                total: 123424,
+                phase_A: 343,
+                phase_B: 2222,
+                phase_C: 1123,
+            }
+        },
+        {
+            id: '101',
+            chargers: [
+                {
+                    type: "GBT",
+                    status: "ok",
+                },
+                {
+                    type: "CCS",
+                    status: "absent",
+                },
+                {
+                    type: "Type1",
+                    status: "absent"
+                },
+                {
+                    type: "Type2",
+                    status: "broken",
+
+                }
+            ],
+            ip: '113.134134.1231241',
+            ssh: 3424123,
+            productNumber: 12345,
+            address: "ROSTOV",
+            region: "OBLAST",
+            nameOfApp: "FLY 2342",
+            status:'online',
+            location: {
+                lat: 55.8570,
+                lng: 49.1200
+            },
+    
+
+            stationChargerData: {
+                total: 123424,
+                phase_A: 343,
+                phase_B: 2222,
+                phase_C: 1123,
+            }
+        },
+        {
+            id: '102',
+            chargers: [
+                {
+                    type: "GBT",
+                    status: "ok",
+                },
+                {
+                    type: "CCS",
+                    status: "absent",
+                },
+                {
+                    type: "Type1",
+                    status: "absent"
+                },
+                {
+                    type: "Type2",
+                    status: "broken",
+
+                }
+            ],
+            ip: '113.134134.1231241',
+            ssh: 3424123,
+            productNumber: 12345,
+            address: "ROSTOV",
+            region: "OBLAST",
+            nameOfApp: "FLY 2342",
+            status:'online',
+            location: {
+                lat: 55.8570,
+                lng: 49.1200
+            },
+    
+
+            stationChargerData: {
+                total: 123424,
+                phase_A: 343,
+                phase_B: 2222,
+                phase_C: 1123,
+            }
+        },
+        {
+            id: '103',
+            chargers: [
+                {
+                    type: "GBT",
+                    status: "ok",
+                },
+                {
+                    type: "CCS",
+                    status: "working",
+                },
+                {
+                    type: "Type1",
+                    status: "absent"
+                },
+                {
+                    type: "Type2",
+                    status: "broken",
+                }
+            ],
+            ip: '113.134134.1231241',
+            ssh: 3424123,
+            productNumber: 222,
+            address: "ROSTOV",
+            region: "OBLAST",
+            nameOfApp: "FLY 1111",
+            status:'offline',
+            location: {
+                lat: 55.8570,
+                lng: 49.1200
+            },
+            stationChargerData: {
+                total: 123424,
+                phase_A: 343,
+                phase_B: 1111,
+                phase_C: 12,
+            }
+        },
+        {
+            id: '106',
             chargers: [
                 {
                     type: "GBT",
